@@ -147,9 +147,9 @@
     </footer>
 
     <script>
-        // --- CONEXIÓN SUPABASE ---
+        // --- CONEXIÓN SUPABASE CONFIGURADA ---
         const supabaseUrl = 'https://xtpomofjzgasonismvhk.supabase.co';
-        const supabaseKey = 'TU_KEY_ANON_PUBLIC_AQUI'; // <--- PEGA TU CLAVE AQUÍ
+        const supabaseKey = 'sb_publishable_JGr1esddA3MsWUzbtGpVVQ_bWElIRK-'; 
         const _supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
         let currentSlide = 0;
@@ -188,7 +188,7 @@
                     </div>
                     <p class="text-slate-200 text-sm mb-3 font-medium">"${rep.avance}"</p>
                     <div class="flex items-center gap-2">
-                        <div class="w-6 h-6 bg-slate-800 rounded-full flex items-center justify-center text-[10px] font-bold text-rose-400">${rep.socio.charAt(0)}</div>
+                        <div class="w-6 h-6 bg-slate-800 rounded-full flex items-center justify-center text-[10px] font-bold text-rose-400">${rep.socio ? rep.socio.charAt(0) : 'R'}</div>
                         <span class="text-[10px] text-slate-400 font-bold uppercase tracking-tight">${rep.socio}</span>
                         <span class="ml-auto text-[10px] font-bold">${rep.estado}</span>
                     </div>
@@ -213,4 +213,5 @@
     </script>
 </body>
 </html>
+
 
