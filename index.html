@@ -14,7 +14,6 @@
         .active { display: block; animation: fadeIn 1s; }
         .custom-scrollbar::-webkit-scrollbar { width: 5px; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #e11d48; border-radius: 10px; }
-        
         #panel-directiva { transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
         .panel-hidden { transform: translateX(100%); }
         .panel-visible { transform: translateX(0); }
@@ -113,15 +112,15 @@
                     <div class="space-y-4 text-sm">
                         <input type="text" id="socio" placeholder="Tu nombre" class="w-full bg-slate-950 border border-slate-800 p-4 rounded-xl focus:ring-2 focus:ring-rose-500 outline-none transition-all">
                         <select id="comite" class="w-full bg-slate-950 border border-slate-800 p-4 rounded-xl outline-none cursor-pointer">
-                            <option value="Rosa">Comité Rosa y Salud</option>
+                            <option value="Rosa y Salud">Comité Rosa y Salud</option>
                             <option value="Ambiental">Comité Ambiental</option>
                             <option value="Imagen">Comité de Imagen</option>
-                            <option value="Fomento">Fomento Profesional</option>
+                            <option value="Fomento Profesional">Fomento Profesional</option>
                             <option value="DEI">Comité DEI</option>
-                            <option value="Membresia">Membresía</option>
-                            <option value="Servicio">Proyectos de Servicio</option>
+                            <option value="Membresía">Membresía</option>
+                            <option value="Proyectos de Servicio">Proyectos de Servicio</option>
                             <option value="Internacional">Servicio Internacional</option>
-                            <option value="Fundacion">Fundación Rotaria</option>
+                            <option value="Fundación Rotaria">Fundación Rotaria</option>
                         </select>
                         <select id="estado" class="w-full bg-slate-950 border border-slate-800 p-4 rounded-xl outline-none">
                             <option value="🟢 En marcha">🟢 En marcha</option>
@@ -137,7 +136,7 @@
             <div class="lg:col-span-8">
                 <h3 class="text-xl font-bold mb-6 flex items-center gap-2 text-slate-300"><span class="w-2 h-6 bg-slate-700 rounded-full"></span>Bitácora de Actividades</h3>
                 <div id="bitacora" class="space-y-4 max-h-[800px] overflow-y-auto pr-2 custom-scrollbar text-center">
-                    <div class="bg-slate-900/50 border border-slate-800 p-10 rounded-3xl"><p class="text-slate-500 italic">Esperando conexión con Supabase para cargar reportes...</p></div>
+                    <div class="bg-slate-900/50 border border-slate-800 p-10 rounded-3xl"><p class="text-slate-500 italic">Cargando reportes...</p></div>
                 </div>
             </div>
         </div>
@@ -148,6 +147,11 @@
     </footer>
 
     <script>
+        // --- CONEXIÓN SUPABASE ---
+        const supabaseUrl = 'https://xtpomofjzgasonismvhk.supabase.co';
+        const supabaseKey = 'TU_KEY_ANON_PUBLIC_AQUI'; // <--- PEGA TU CLAVE AQUÍ
+        const _supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
         let currentSlide = 0;
         const slides = document.querySelectorAll('.img-slide');
         setInterval(() => {
@@ -169,12 +173,44 @@
             }
         }
 
-        function registrarAvance() {
-            const socio = document.getElementById('socio').value;
-            if(!socio) return alert("José, dile al socio que ponga su nombre.");
-            alert("¡Todo listo! Menús y comités 100% integrados.");
+        async function cargarBitacora() {
+            const { data, error } = await _supabase.from('reportes').select('*').order('created_at', { ascending: false });
+            const contenedor = document.getElementById('bitacora');
+            if (error || !data || data.length === 0) {
+                contenedor.innerHTML = `<div class="bg-slate-900/50 border border-slate-800 p-10 rounded-3xl"><p class="text-slate-500 italic">No hay reportes aún.</p></div>`;
+                return;
+            }
+            contenedor.innerHTML = data.map(rep => `
+                <div class="bg-slate-900 border-l-4 ${rep.estado.includes('🔴') ? 'border-red-500' : rep.estado.includes('🟡') ? 'border-yellow-500' : 'border-green-500'} p-6 rounded-2xl text-left mb-4 fade-in shadow-xl">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-[10px] font-black uppercase tracking-widest text-rose-500">${rep.comite}</span>
+                        <span class="text-[9px] text-slate-500">${new Date(rep.created_at).toLocaleString()}</span>
+                    </div>
+                    <p class="text-slate-200 text-sm mb-3 font-medium">"${rep.avance}"</p>
+                    <div class="flex items-center gap-2">
+                        <div class="w-6 h-6 bg-slate-800 rounded-full flex items-center justify-center text-[10px] font-bold text-rose-400">${rep.socio.charAt(0)}</div>
+                        <span class="text-[10px] text-slate-400 font-bold uppercase tracking-tight">${rep.socio}</span>
+                        <span class="ml-auto text-[10px] font-bold">${rep.estado}</span>
+                    </div>
+                </div>
+            `).join('');
         }
+
+        async function registrarAvance() {
+            const socio = document.getElementById('socio').value;
+            const comite = document.getElementById('comite').value;
+            const estado = document.getElementById('estado').value;
+            const avance = document.getElementById('avance').value;
+            if(!socio || !avance) return alert("Completa los campos, por favor.");
+            const { error } = await _supabase.from('reportes').insert([{ socio, comite, estado, avance }]);
+            if (error) alert("Error: " + error.message);
+            else {
+                document.getElementById('socio').value = ""; document.getElementById('avance').value = "";
+                alert("¡Reporte enviado!"); cargarBitacora();
+            }
+        }
+        window.onload = cargarBitacora;
     </script>
 </body>
-
 </html>
+
