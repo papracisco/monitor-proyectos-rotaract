@@ -42,7 +42,7 @@
                 <button onclick="toggleDirectiva()" class="group text-right hover:opacity-80 transition-all">
                     <p class="text-[10px] md:text-xs font-bold text-slate-200 uppercase tracking-wide">Presidente en Gestión: <span class="text-rose-500">José Francisco Parada</span></p>
                     <p class="text-[9px] md:text-[10px] font-medium text-slate-400 tracking-wide uppercase">Presidente Electo: <span class="text-slate-300 italic">Isabel Avendaño</span></p>
-                    <span class="inline-block mt-1 text-[8px] bg-rose-500/10 px-2 py-0.5 rounded border border-rose-500/20 text-rose-400 font-bold uppercase tracking-widest italic">Click para ver Junta Directiva</span>
+                    <span class="inline-block mt-1 text-[8px] bg-rose-500/10 px-2 py-0.5 rounded border border-rose-500/20 text-rose-400 font-bold uppercase tracking-widest italic tracking-wider">Click para ver Junta Directiva</span>
                 </button>
             </div>
         </div>
@@ -54,11 +54,11 @@
             <button onclick="toggleDirectiva()" class="text-slate-500 hover:text-white text-3xl">&times;</button>
         </div>
         <div class="space-y-6 text-sm">
-            <div class="border-l-2 border-rose-600 pl-4"><p class="text-[9px] text-slate-500 font-bold">Presidente</p><p>José Francisco Parada</p></div>
-            <div class="border-l-2 border-slate-700 pl-4"><p class="text-[9px] text-slate-500 font-bold">Vicepresidente</p><p>Aisha Ramirez</p></div>
-            <div class="border-l-2 border-slate-700 pl-4"><p class="text-[9px] text-slate-500 font-bold">Secretaria</p><p>Isabel Avendaño</p></div>
-            <div class="border-l-2 border-slate-700 pl-4"><p class="text-[9px] text-slate-500 font-bold">Tesorero</p><p>Omar Sanchez</p></div>
-            <div class="border-l-2 border-slate-700 pl-4"><p class="text-[9px] text-slate-500 font-bold">Macero</p><p>Andrew Barrios</p></div>
+            <div class="border-l-2 border-rose-600 pl-4"><p class="text-[9px] text-slate-500 font-bold uppercase tracking-tighter">Presidente</p><p>José Francisco Parada</p></div>
+            <div class="border-l-2 border-slate-700 pl-4"><p class="text-[9px] text-slate-500 font-bold uppercase tracking-tighter">Vicepresidente</p><p>Aisha Ramirez</p></div>
+            <div class="border-l-2 border-slate-700 pl-4"><p class="text-[9px] text-slate-500 font-bold uppercase tracking-tighter">Secretaria</p><p>Isabel Avendaño</p></div>
+            <div class="border-l-2 border-slate-700 pl-4"><p class="text-[9px] text-slate-500 font-bold uppercase tracking-tighter">Tesorero</p><p>Omar Sanchez</p></div>
+            <div class="border-l-2 border-slate-700 pl-4"><p class="text-[9px] text-slate-500 font-bold uppercase tracking-tighter">Macero</p><p>Andrew Barrios</p></div>
         </div>
     </div>
 
@@ -68,7 +68,8 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12 items-center">
             <div class="fade-in space-y-6 text-center lg:text-left">
                 <h2 class="text-5xl lg:text-7xl font-black leading-tight">¡Bienvenidos, <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-orange-400">Socios Líderes!</span></h2>
-                <div class="h-1.5 w-16 bg-rose-500 rounded-full mx-auto lg:mx-0"></div>
+                <p class="text-slate-400 text-lg">Centro de control de <strong>Rotaract Las Delicias</strong>. Registra avances y genera impacto.</p>
+                <div class="h-1.5 w-16 bg-rose-500 rounded-full mx-auto lg:mx-0 shadow-[0_0_15px_rgba(225,29,72,0.5)]"></div>
             </div>
             <div class="relative overflow-hidden rounded-3xl shadow-2xl border border-slate-800">
                 <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000" class="img-slide active">
@@ -80,11 +81,15 @@
         <div class="mb-16">
             <h3 class="text-xs font-black tracking-[0.3em] text-slate-500 uppercase mb-8 flex items-center gap-4">Líderes de Comité 2025-2026 <span class="h-px bg-slate-800 flex-grow"></span></h3>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-2xl"><p class="text-[8px] text-rose-500 font-black uppercase">Rosa y Salud</p><p class="text-xs font-bold">Nicolth Romero</p></div>
-                <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-2xl"><p class="text-[8px] text-rose-500 font-black uppercase">Ambiental</p><p class="text-xs font-bold">Aisha Ramirez</p></div>
-                <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-2xl"><p class="text-[8px] text-rose-500 font-black uppercase">Membresía</p><p class="text-xs font-bold">Andrew Barrios</p></div>
-                <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-2xl"><p class="text-[8px] text-rose-500 font-black uppercase">Proyectos</p><p class="text-xs font-bold">Emmanuel Gonzalez</p></div>
-                <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-2xl"><p class="text-[8px] text-rose-500 font-black uppercase">Imagen</p><p class="text-xs font-bold">Gabriel Hernandez</p></div>
+                <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-2xl hover:border-rose-500/30 transition-all"><p class="text-[8px] text-rose-500 font-black uppercase mb-1">Rosa y Salud</p><p class="text-xs font-bold">Nicolth Romero</p></div>
+                <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-2xl hover:border-rose-500/30 transition-all"><p class="text-[8px] text-rose-500 font-black uppercase mb-1">Ambiental</p><p class="text-xs font-bold">Aisha Ramirez</p></div>
+                <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-2xl hover:border-rose-500/30 transition-all"><p class="text-[8px] text-rose-500 font-black uppercase mb-1">Membresía</p><p class="text-xs font-bold">Andrew Barrios</p></div>
+                <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-2xl hover:border-rose-500/30 transition-all"><p class="text-[8px] text-rose-500 font-black uppercase mb-1">Proyectos</p><p class="text-xs font-bold">Emmanuel Gonzalez</p></div>
+                <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-2xl hover:border-rose-500/30 transition-all"><p class="text-[8px] text-rose-500 font-black uppercase mb-1">Imagen</p><p class="text-xs font-bold">Gabriel Hernandez</p></div>
+                <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-2xl hover:border-rose-500/30 transition-all"><p class="text-[8px] text-rose-500 font-black uppercase mb-1">Internacional</p><p class="text-xs font-bold text-slate-200">Omar Sanchez</p></div>
+                <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-2xl hover:border-rose-500/30 transition-all"><p class="text-[8px] text-rose-500 font-black uppercase mb-1">Fomento Prof.</p><p class="text-xs font-bold text-slate-200">Mafer Leañez</p></div>
+                <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-2xl hover:border-rose-500/30 transition-all"><p class="text-[8px] text-rose-500 font-black uppercase mb-1">Fund. Rotaria</p><p class="text-xs font-bold text-slate-200">Isabel Avendaño</p></div>
+                <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-2xl hover:border-rose-500/30 transition-all"><p class="text-[8px] text-rose-500 font-black uppercase mb-1">Comité DEI</p><p class="text-xs font-bold text-slate-200">Alci Padilla</p></div>
             </div>
         </div>
 
@@ -93,8 +98,8 @@
                 <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 shadow-2xl sticky top-28">
                     <h3 class="text-xl font-bold mb-6 flex items-center gap-2"><span class="w-2 h-6 bg-rose-500 rounded-full"></span>Nuevo Reporte</h3>
                     <div class="space-y-4 text-sm text-white">
-                        <input type="text" id="socio" placeholder="Tu nombre" class="w-full bg-slate-950 border border-slate-800 p-4 rounded-xl focus:ring-2 focus:ring-rose-500 outline-none">
-                        <select id="comite" class="w-full bg-slate-950 border border-slate-800 p-4 rounded-xl outline-none text-white">
+                        <input type="text" id="socio" placeholder="Tu nombre" class="w-full bg-slate-950 border border-slate-800 p-4 rounded-xl focus:ring-2 focus:ring-rose-500 outline-none transition-all">
+                        <select id="comite" class="w-full bg-slate-950 border border-slate-800 p-4 rounded-xl outline-none text-white cursor-pointer">
                             <option value="Rosa y Salud">Comité Rosa y Salud</option>
                             <option value="Ambiental">Comité Ambiental</option>
                             <option value="Imagen">Comité de Imagen</option>
@@ -138,7 +143,7 @@
     </footer>
 
     <script>
-        // --- CONFIGURACIÓN ---
+        // --- CONEXIÓN ---
         const supabaseUrl = 'https://xtpomofjzgasonismvhk.supabase.co';
         const supabaseKey = 'sb_publishable_JGr1esddA3MsWUzbtGpVVQ_bWElIRK-';
         const _supabase = supabase.createClient(supabaseUrl, supabaseKey);
@@ -175,13 +180,19 @@
         }
 
         async function eliminarReporte(id) {
-            if(!confirm("¿Estás seguro de eliminar este reporte de forma permanente?")) return;
+            if(!id) return alert("No se encontró el ID.");
+            if(!confirm("¿Eliminar este reporte permanentemente?")) return;
+            
             const { error } = await _supabase.from('reportes').delete().eq('id', id);
-            if(error) alert("Error al eliminar: " + error.message);
-            else cargarBitacora();
+            
+            if(error) alert("Error: " + error.message);
+            else {
+                alert("Reporte eliminado.");
+                cargarBitacora();
+            }
         }
 
-        // --- FUNCIONES CORE ---
+        // --- CORE ---
         async function cargarBitacora() {
             const { data, error } = await _supabase.from('reportes').select('*').order('created_at', { ascending: false });
             const contenedor = document.getElementById('bitacora');
@@ -191,7 +202,7 @@
             }
             contenedor.innerHTML = data.map(rep => `
                 <div class="bg-slate-900 border-l-4 ${rep.estado.includes('🔴') ? 'border-red-500' : rep.estado.includes('🟡') ? 'border-yellow-500' : 'border-green-500'} p-6 rounded-2xl text-left mb-4 fade-in shadow-xl relative group">
-                    ${isAdmin ? `<button onclick="eliminarReporte(${rep.id})" class="absolute top-4 right-4 bg-red-600 hover:bg-red-500 text-white text-[10px] font-bold px-2 py-1 rounded shadow-lg transition-all">ELIMINAR</button>` : ''}
+                    ${isAdmin ? `<button onclick="eliminarReporte(${rep.id})" class="absolute top-4 right-4 bg-red-600 hover:bg-red-500 text-white text-[10px] font-bold px-3 py-1.5 rounded shadow-lg transition-all z-10">ELIMINAR</button>` : ''}
                     <div class="flex justify-between items-start mb-2">
                         <span class="text-[10px] font-black uppercase tracking-widest text-rose-500">${rep.comite}</span>
                         <span class="text-[9px] text-slate-500">${new Date(rep.created_at).toLocaleString()}</span>
@@ -211,7 +222,7 @@
             const comite = document.getElementById('comite').value;
             const estado = document.getElementById('estado').value;
             const avance = document.getElementById('avance').value;
-            if(!socio || !avance) return alert("Completa los campos, por favor.");
+            if(!socio || !avance) return alert("Completa los campos.");
             const { error } = await _supabase.from('reportes').insert([{ socio, comite, estado, avance }]);
             if (error) alert("Error: " + error.message);
             else {
