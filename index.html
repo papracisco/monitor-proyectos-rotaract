@@ -25,13 +25,13 @@
 <body class="bg-slate-950 text-white font-sans selection:bg-rose-500/30 overflow-x-hidden text-left">
 
     <nav class="p-4 border-b border-slate-800 bg-slate-950/90 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-            <div class="flex items-center gap-4 md:gap-6 text-left">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-left">
+            <div class="flex items-center gap-4 md:gap-6">
                 <div class="flex items-center gap-3">
                     <div class="w-10 h-10 bg-rose-600 rounded-xl flex items-center justify-center shadow-lg shadow-rose-900/40">
                         <span class="text-white font-black text-2xl uppercase">R</span>
                     </div>
-                    <span class="text-2xl font-black tracking-[0.2em] text-white uppercase leading-none">OTARACT</span>
+                    <span class="text-2xl font-black tracking-[0.2em] text-white">OTARACT</span>
                 </div>
                 <div class="h-10 w-[1px] bg-slate-800 hidden lg:block"></div>
                 <div class="hidden sm:flex flex-col">
@@ -49,16 +49,16 @@
         </div>
     </nav>
 
-    <div id="modal-proyecto" class="fixed inset-0 z-[100] bg-slate-950/95 backdrop-blur-xl items-center justify-center p-4">
+    <div id="modal-proyecto" class="fixed inset-0 z-[100] bg-slate-950/95 backdrop-blur-xl items-center justify-center p-4 text-left">
         <div class="bg-slate-900 border border-slate-800 w-full max-w-2xl rounded-3xl p-8 max-h-[90vh] overflow-y-auto custom-scrollbar">
             <div class="flex justify-between items-center mb-8">
-                <h3 class="text-2xl font-black text-rose-500 uppercase">Propuesta de Actividad</h3>
+                <h3 class="text-2xl font-black text-rose-500 uppercase italic">Propuesta de Actividad</h3>
                 <button onclick="toggleModal()" class="text-slate-500 text-3xl hover:text-white">&times;</button>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                 <div class="md:col-span-2">
                     <label class="text-[10px] text-slate-500 uppercase font-bold ml-2">Título de la actividad</label>
-                    <input type="text" id="p-titulo" placeholder="Ej: Jornada de Salud" class="w-full bg-slate-950 border border-slate-800 p-4 rounded-xl outline-none text-white">
+                    <input type="text" id="p-titulo" placeholder="Nombre del proyecto" class="w-full bg-slate-950 border border-slate-800 p-4 rounded-xl outline-none text-white">
                 </div>
                 <div>
                     <label class="text-[10px] text-slate-500 uppercase font-bold ml-2">Socio Proponente</label>
@@ -76,33 +76,33 @@
                     <label class="text-[10px] text-slate-500 uppercase font-bold ml-2">Presupuesto estimado</label>
                     <input type="text" id="p-presu" placeholder="Monto aproximado" class="w-full bg-slate-950 border border-slate-800 p-4 rounded-xl outline-none text-white">
                 </div>
-                <textarea id="p-desc" placeholder="Descripción: ¿Qué se planea hacer?" class="w-full bg-slate-950 border border-slate-800 p-4 rounded-xl outline-none md:col-span-2 h-24 text-white"></textarea>
-                <textarea id="p-aliados" placeholder="Aliados Estratégicos y Recursos necesarios" class="w-full bg-slate-950 border border-slate-800 p-4 rounded-xl outline-none md:col-span-2 h-24 text-white"></textarea>
+                <textarea id="p-desc" placeholder="Descripción detallada..." class="w-full bg-slate-950 border border-slate-800 p-4 rounded-xl outline-none md:col-span-2 h-24 text-white"></textarea>
+                <textarea id="p-aliados" placeholder="Aliados y Recursos necesarios..." class="w-full bg-slate-950 border border-slate-800 p-4 rounded-xl outline-none md:col-span-2 h-24 text-white"></textarea>
             </div>
             <button onclick="enviarPropuesta()" class="w-full bg-rose-600 hover:bg-rose-500 text-white font-black py-4 rounded-xl mt-8 uppercase tracking-widest transition-all">Enviar para Aprobación</button>
         </div>
     </div>
 
-    <div id="panel-directiva" class="fixed top-0 right-0 h-full w-80 bg-slate-900 border-l border-slate-800 z-[60] p-8 shadow-2xl panel-hidden">
+    <div id="panel-directiva" class="fixed top-0 right-0 h-full w-80 bg-slate-900 border-l border-slate-800 z-[60] p-8 shadow-2xl panel-hidden text-left">
         <div class="flex justify-between items-center mb-10">
-            <div><h3 class="text-rose-500 font-black tracking-widest uppercase text-sm leading-none">Junta Directiva</h3><p class="text-[10px] text-slate-500 uppercase">Periodo 2025-2026</p></div>
-            <button onclick="toggleDirectiva()" class="text-slate-500 text-3xl hover:text-white leading-none">&times;</button>
+            <div><h3 class="text-rose-500 font-black tracking-widest uppercase text-sm">Junta Directiva</h3><p class="text-[10px] text-slate-500 uppercase">Periodo 2025-2026</p></div>
+            <button onclick="toggleDirectiva()" class="text-slate-500 text-3xl hover:text-white">&times;</button>
         </div>
         <div class="space-y-6 text-sm text-white">
-            <div class="border-l-2 border-rose-600 pl-4 font-bold uppercase text-[9px] text-slate-500"><p>Presidente</p><p class="text-white text-sm normal-case font-normal">José Francisco Parada</p></div>
-            <div class="border-l-2 border-slate-700 pl-4 font-bold uppercase text-[9px] text-slate-500"><p>Vicepresidente</p><p class="text-white text-sm normal-case font-normal">Aisha Ramirez</p></div>
-            <div class="border-l-2 border-slate-700 pl-4 font-bold uppercase text-[9px] text-slate-500"><p>Secretaria</p><p class="text-white text-sm normal-case font-normal">Isabel Avendaño</p></div>
-            <div class="border-l-2 border-slate-700 pl-4 font-bold uppercase text-[9px] text-slate-500"><p>Tesorero</p><p class="text-white text-sm normal-case font-normal">Omar Sanchez</p></div>
-            <div class="border-l-2 border-slate-700 pl-4 font-bold uppercase text-[9px] text-slate-500"><p>Macero</p><p class="text-white text-sm normal-case font-normal">Andrew Barrios</p></div>
+            <div class="border-l-2 border-rose-600 pl-4 font-bold uppercase text-[9px] text-slate-500"><p>Presidente</p><p class="text-white text-sm normal-case font-normal tracking-tight">José Francisco Parada</p></div>
+            <div class="border-l-2 border-slate-700 pl-4 font-bold uppercase text-[9px] text-slate-500"><p>Vicepresidente</p><p class="text-white text-sm normal-case font-normal tracking-tight">Aisha Ramirez</p></div>
+            <div class="border-l-2 border-slate-700 pl-4 font-bold uppercase text-[9px] text-slate-500"><p>Secretaria</p><p class="text-white text-sm normal-case font-normal tracking-tight">Isabel Avendaño</p></div>
+            <div class="border-l-2 border-slate-700 pl-4 font-bold uppercase text-[9px] text-slate-500"><p>Tesorero</p><p class="text-white text-sm normal-case font-normal tracking-tight">Omar Sanchez</p></div>
+            <div class="border-l-2 border-slate-700 pl-4 font-bold uppercase text-[9px] text-slate-500"><p>Macero</p><p class="text-white text-sm normal-case font-normal tracking-tight">Andrew Barrios</p></div>
         </div>
     </div>
 
     <div id="overlay" onclick="toggleDirectiva()" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity"></div>
 
-    <main class="max-w-7xl mx-auto p-6 lg:p-10">
+    <main class="max-w-7xl mx-auto p-6 lg:p-10 text-left">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12 items-center">
             <div class="fade-in space-y-6">
-                <h2 class="text-5xl lg:text-7xl font-black leading-tight italic text-center lg:text-left">Gestión <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-orange-400 font-black">Transformadora.</span></h2>
+                <h2 class="text-5xl lg:text-7xl font-black leading-tight italic">Gestión <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-orange-400 font-black">Transformadora.</span></h2>
                 <button onclick="toggleModal()" class="bg-rose-600 hover:bg-rose-500 px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-xs transition-all shadow-xl shadow-rose-900/20 scale-100 hover:scale-105">🚀 Proponer Proyecto / Actividad</button>
             </div>
             <div class="relative overflow-hidden rounded-3xl shadow-2xl border border-slate-800 h-64 lg:h-80">
@@ -113,50 +113,57 @@
         </div>
 
         <div class="mb-16">
-            <h3 class="text-xs font-black tracking-[0.3em] text-slate-500 uppercase mb-8 flex items-center gap-4">Líderes de Comité 2025-2026 <span class="h-px bg-slate-800 flex-grow"></span></h3>
+            <h3 class="text-xs font-black tracking-[0.3em] text-slate-500 uppercase mb-8 flex items-center gap-4 italic">Líderes de Comité 2025-2026 <span class="h-px bg-slate-800 flex-grow"></span></h3>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-2xl hover:border-rose-500/30 transition-all"><p class="text-[8px] text-rose-500 font-black uppercase mb-1 leading-none">Rosa y Salud</p><p class="text-xs font-bold text-white">Nicolth Romero</p></div>
-                <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-2xl hover:border-rose-500/30 transition-all"><p class="text-[8px] text-rose-500 font-black uppercase mb-1 leading-none">Ambiental</p><p class="text-xs font-bold text-white">Aisha Ramirez</p></div>
-                <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-2xl hover:border-rose-500/30 transition-all"><p class="text-[8px] text-rose-500 font-black uppercase mb-1 leading-none">Membresía</p><p class="text-xs font-bold text-white">Andrew Barrios</p></div>
-                <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-2xl hover:border-rose-500/30 transition-all"><p class="text-[8px] text-rose-500 font-black uppercase mb-1 leading-none">Proyectos de Servicio</p><p class="text-xs font-bold text-white">Emmanuel Gonzalez</p></div>
-                <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-2xl hover:border-rose-500/30 transition-all"><p class="text-[8px] text-rose-500 font-black uppercase mb-1 leading-none">Comité DEI</p><p class="text-xs font-bold text-white">Alci Padilla</p></div>
-                <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-2xl hover:border-rose-500/30 transition-all"><p class="text-[8px] text-rose-500 font-black uppercase mb-1 leading-none">Imagen</p><p class="text-xs font-bold text-white">Gabriel Hernandez</p></div>
-                <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-2xl hover:border-rose-500/30 transition-all"><p class="text-[8px] text-rose-500 font-black uppercase mb-1 leading-none">Internacional</p><p class="text-xs font-bold text-white">Omar Sanchez</p></div>
-                <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-2xl hover:border-rose-500/30 transition-all"><p class="text-[8px] text-rose-500 font-black uppercase mb-1 leading-none">Fomento Prof.</p><p class="text-xs font-bold text-white">Mafer Leañez</p></div>
-                <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-2xl hover:border-rose-500/30 transition-all"><p class="text-[8px] text-rose-500 font-black uppercase mb-1 leading-none">Fund. Rotaria</p><p class="text-xs font-bold text-white">Isabel Avendaño</p></div>
+                <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-2xl hover:border-rose-500/30 transition-all"><p class="text-[8px] text-rose-500 font-black uppercase mb-1 leading-none tracking-widest">Rosa y Salud</p><p class="text-xs font-bold text-white">Nicolth Romero</p></div>
+                <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-2xl hover:border-rose-500/30 transition-all"><p class="text-[8px] text-rose-500 font-black uppercase mb-1 leading-none tracking-widest">Ambiental</p><p class="text-xs font-bold text-white">Aisha Ramirez</p></div>
+                <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-2xl hover:border-rose-500/30 transition-all"><p class="text-[8px] text-rose-500 font-black uppercase mb-1 leading-none tracking-widest">Membresía</p><p class="text-xs font-bold text-white">Andrew Barrios</p></div>
+                <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-2xl hover:border-rose-500/30 transition-all"><p class="text-[8px] text-rose-500 font-black uppercase mb-1 leading-none tracking-widest">Proyectos de Servicio</p><p class="text-xs font-bold text-white">Emmanuel Gonzalez</p></div>
+                <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-2xl hover:border-rose-500/30 transition-all"><p class="text-[8px] text-rose-500 font-black uppercase mb-1 leading-none tracking-widest">Comité DEI</p><p class="text-xs font-bold text-white">Alci Padilla</p></div>
+                <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-2xl hover:border-rose-500/30 transition-all"><p class="text-[8px] text-rose-500 font-black uppercase mb-1 leading-none tracking-widest">Imagen</p><p class="text-xs font-bold text-white">Gabriel Hernandez</p></div>
+                <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-2xl hover:border-rose-500/30 transition-all"><p class="text-[8px] text-rose-500 font-black uppercase mb-1 leading-none tracking-widest">Internacional</p><p class="text-xs font-bold text-white">Omar Sanchez</p></div>
+                <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-2xl hover:border-rose-500/30 transition-all"><p class="text-[8px] text-rose-500 font-black uppercase mb-1 leading-none tracking-widest">Fomento Prof.</p><p class="text-xs font-bold text-white">Mafer Leañez</p></div>
+                <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-2xl hover:border-rose-500/30 transition-all"><p class="text-[8px] text-rose-500 font-black uppercase mb-1 leading-none tracking-widest">Fund. Rotaria</p><p class="text-xs font-bold text-white">Isabel Avendaño</p></div>
             </div>
         </div>
 
         <div class="flex gap-4 mb-8 border-b border-slate-800 p-2">
-            <button onclick="switchTab('reportes')" id="tab-reportes" class="px-6 py-2 rounded-xl text-xs font-black uppercase bg-rose-600 text-white transition-all">Bitácora Diaria</button>
-            <button onclick="switchTab('proyectos')" id="tab-proyectos" class="px-6 py-2 rounded-xl text-xs font-black uppercase text-slate-500 hover:text-white transition-all">Proyectos del Club</button>
+            <button onclick="switchTab('reportes')" id="tab-reportes" class="px-6 py-2 rounded-xl text-xs font-black uppercase bg-rose-600 text-white transition-all italic">Bitácora Diaria</button>
+            <button onclick="switchTab('proyectos')" id="tab-proyectos" class="px-6 py-2 rounded-xl text-xs font-black uppercase text-slate-500 hover:text-white transition-all italic">Proyectos del Club</button>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
-            <div class="lg:col-span-4" id="seccion-form">
+            <div class="lg:col-span-4" id="seccion-form text-left">
                 <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 shadow-2xl sticky top-28">
                     <h3 class="text-xl font-bold mb-6 flex items-center gap-2"><span class="w-2 h-6 bg-rose-500 rounded-full"></span>Nuevo Reporte</h3>
-                    <div class="space-y-4 text-sm text-white">
+                    <div class="space-y-4 text-sm text-white text-left">
                         <input type="text" id="socio" placeholder="Tu nombre" class="w-full bg-slate-950 border border-slate-800 p-4 rounded-xl outline-none">
-                        <select id="comite" class="w-full bg-slate-950 border border-slate-800 p-4 rounded-xl text-white outline-none">
+                        <select id="comite" class="w-full bg-slate-950 border border-slate-800 p-4 rounded-xl text-white outline-none cursor-pointer">
                             <option value="Rosa y Salud">Rosa y Salud</option>
                             <option value="Ambiental">Ambiental</option>
                             <option value="Imagen">Imagen</option>
                             <option value="Membresía">Membresía</option>
-                            <option value="Proyectos">Proyectos de Servicio</option>
+                            <option value="Proyectos de Servicio">Proyectos de Servicio</option>
                             <option value="Fomento Profesional">Fomento Profesional</option>
+                            <option value="Fundación Rotaria">Fundación Rotaria</option>
+                            <option value="Internacional">Servicio Internacional</option>
                             <option value="DEI">Comité DEI</option>
                         </select>
+                        <select id="estado" class="w-full bg-slate-950 border border-slate-800 p-4 rounded-xl text-white outline-none cursor-pointer">
+                            <option value="🟢 En marcha">🟢 En marcha</option>
+                            <option value="🟡 En espera">🟡 En espera</option>
+                            <option value="🔴 Crítico">🔴 Crítico</option>
+                        </select>
                         <textarea id="avance" placeholder="Resumen del día..." rows="4" class="w-full bg-slate-950 border border-slate-800 p-4 rounded-xl outline-none text-white resize-none"></textarea>
-                        <button onclick="registrarAvance()" class="w-full bg-rose-600 hover:bg-rose-500 text-white font-bold py-4 rounded-xl transition-all uppercase tracking-widest text-xs">Publicar</button>
+                        <button onclick="registrarAvance()" class="w-full bg-rose-600 hover:bg-rose-500 text-white font-black py-4 rounded-xl transition-all uppercase tracking-widest text-xs">Publicar</button>
                     </div>
                 </div>
             </div>
 
             <div class="lg:col-span-8 text-left">
                 <div class="flex justify-between items-center mb-6">
-                    <h3 id="bitacora-titulo" class="text-xl font-bold text-slate-300 uppercase italic tracking-tighter">Bitácora de Reportes</h3>
-                    <button onclick="authAdmin()" class="opacity-10 hover:opacity-100 transition-opacity"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg></button>
+                    <h3 id="bitacora-titulo" class="text-xl font-bold text-slate-300 uppercase italic tracking-tighter">Bitácora Diaria</h3>
+                    <button onclick="authAdmin()" class="opacity-10 hover:opacity-100 transition-opacity"><svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg></button>
                 </div>
                 <div id="contenedor-principal" class="space-y-4"></div>
             </div>
@@ -181,14 +188,14 @@
 
         function switchTab(tab) {
             activeTab = tab;
-            document.getElementById('tab-reportes').className = tab === 'reportes' ? 'px-6 py-2 rounded-xl text-xs font-black uppercase bg-rose-600 text-white transition-all' : 'px-6 py-2 rounded-xl text-xs font-black uppercase text-slate-500';
-            document.getElementById('tab-proyectos').className = tab === 'proyectos' ? 'px-6 py-2 rounded-xl text-xs font-black uppercase bg-rose-600 text-white transition-all' : 'px-6 py-2 rounded-xl text-xs font-black uppercase text-slate-500';
+            document.getElementById('tab-reportes').className = tab === 'reportes' ? 'px-6 py-2 rounded-xl text-xs font-black uppercase bg-rose-600 text-white transition-all' : 'px-6 py-2 rounded-xl text-xs font-black uppercase text-slate-500 transition-all';
+            document.getElementById('tab-proyectos').className = tab === 'proyectos' ? 'px-6 py-2 rounded-xl text-xs font-black uppercase bg-rose-600 text-white transition-all' : 'px-6 py-2 rounded-xl text-xs font-black uppercase text-slate-500 transition-all';
             document.getElementById('bitacora-titulo').innerText = tab === 'reportes' ? 'Bitácora Diaria' : 'Proyectos del Club';
             cargarDatos();
         }
 
         function authAdmin() {
-            if(prompt("Clave de Acceso:") === "Delicias2026") {
+            if(prompt("Clave Presidente:") === "Delicias2026") {
                 isAdmin = !isAdmin;
                 alert(isAdmin ? "Modo Admin ACTIVADO" : "Modo Admin DESACTIVADO");
                 cargarDatos();
@@ -198,11 +205,12 @@
         async function registrarAvance() {
             const socio = document.getElementById('socio').value;
             const comite = document.getElementById('comite').value;
+            const estado = document.getElementById('estado').value;
             const avance = document.getElementById('avance').value;
             if(!socio || !avance) return alert("Completa los campos.");
-            const { error } = await _supabase.from('reportes').insert([{ socio, comite, avance, estado: '🟢' }]);
+            const { error } = await _supabase.from('reportes').insert([{ socio, comite, avance, estado }]);
             if (error) alert(error.message);
-            else { alert("Reporte enviado!"); document.getElementById('avance').value = ""; cargarDatos(); }
+            else { alert("Reporte publicado!"); document.getElementById('avance').value = ""; cargarDatos(); }
         }
 
         async function eliminarReporte(id) {
@@ -220,7 +228,7 @@
                 aliados: document.getElementById('p-aliados').value,
                 aprobado: false
             };
-            if(!datos.titulo || !datos.proponente) return alert("Completa los campos obligatorios.");
+            if(!datos.titulo || !datos.proponente) return alert("Faltan datos obligatorios.");
             const { error } = await _supabase.from('proyectos_actividades').insert([datos]);
             if(error) alert(error.message);
             else { alert("Propuesta enviada!"); toggleModal(); cargarDatos(); }
@@ -248,7 +256,7 @@
                     ['Título', pro.titulo],
                     ['Líder', pro.proponente],
                     ['Fecha', pro.fecha_tentativa],
-                    ['Lugar', pro.lugar || 'No especificado'],
+                    ['Lugar', pro.lugar || 'Sede'],
                     ['Presupuesto', pro.presupuesto],
                     ['Aliados', pro.aliados || 'Ninguno']
                 ],
@@ -267,35 +275,38 @@
             if(activeTab === 'reportes') {
                 const { data } = await _supabase.from('reportes').select('*').order('created_at', { ascending: false });
                 contenedor.innerHTML = (data || []).map(rep => `
-                    <div class="bg-slate-900 border-l-4 border-rose-600 p-6 rounded-2xl text-left fade-in relative mb-4 shadow-xl">
-                        ${isAdmin ? `<button onclick="eliminarReporte(${rep.id})" class="absolute top-4 right-4 text-[10px] bg-red-600 px-2 py-1 rounded">Borrar</button>` : ''}
-                        <p class="text-[9px] font-black text-rose-500 uppercase mb-2 tracking-widest leading-none">${rep.comite}</p>
-                        <p class="text-slate-200 text-sm mb-3">"${rep.avance}"</p>
+                    <div class="bg-slate-900 border-l-4 ${rep.estado.includes('🔴') ? 'border-red-500' : rep.estado.includes('🟡') ? 'border-yellow-500' : 'border-green-500'} p-6 rounded-2xl text-left fade-in relative mb-4 shadow-xl">
+                        ${isAdmin ? `<button onclick="eliminarReporte(${rep.id})" class="absolute top-4 right-4 text-[10px] bg-red-600 px-2 py-1 rounded font-bold uppercase tracking-widest">Borrar</button>` : ''}
+                        <div class="flex justify-between items-center mb-2">
+                            <p class="text-[9px] font-black text-rose-500 uppercase tracking-widest leading-none">${rep.comite}</p>
+                            <span class="text-[9px] font-bold text-slate-400 uppercase tracking-tighter">${rep.estado}</span>
+                        </div>
+                        <p class="text-slate-200 text-sm mb-3 font-medium">"${rep.avance}"</p>
                         <p class="text-[10px] text-slate-500 uppercase font-bold tracking-tighter">${rep.socio} • ${new Date(rep.created_at).toLocaleDateString()}</p>
                     </div>
-                `).join('') || '<p class="text-slate-500 italic text-center p-10">Sin reportes.</p>';
+                `).join('') || '<p class="text-slate-500 italic text-center p-10 font-bold uppercase tracking-widest">Sin reportes hoy.</p>';
             } else {
                 let query = _supabase.from('proyectos_actividades').select('*').order('created_at', { ascending: false });
                 if (!isAdmin) query = query.eq('aprobado', true);
                 const { data } = await query;
                 contenedor.innerHTML = (data || []).map(pro => `
                     <div class="bg-slate-900 p-8 rounded-3xl border ${pro.aprobado ? 'border-green-500/50 shadow-[0_0_20px_rgba(34,197,94,0.1)]' : 'border-yellow-500/30'} fade-in mb-6 text-left relative shadow-2xl">
-                        ${pro.aprobado ? '<span class="bg-green-600 text-[8px] font-black px-3 py-1 rounded-full absolute -top-2 left-6 uppercase text-white shadow-lg">Aprobado ✅</span>' : '<span class="bg-yellow-600 text-[8px] font-black px-3 py-1 rounded-full absolute -top-2 left-6 uppercase text-white shadow-lg">Pendiente ⏳</span>'}
+                        ${pro.aprobado ? '<span class="bg-green-600 text-[8px] font-black px-3 py-1 rounded-full absolute -top-2 left-6 uppercase text-white shadow-lg">Proyecto Aprobado ✅</span>' : '<span class="bg-yellow-600 text-[8px] font-black px-3 py-1 rounded-full absolute -top-2 left-6 uppercase text-white shadow-lg">Propuesta en Revisión ⏳</span>'}
                         ${isAdmin ? `<div class="absolute top-4 right-4 flex gap-2">
-                            ${!pro.aprobado ? `<button onclick="gestionarProyecto(${pro.id}, 'aprobar')" class="bg-green-600 text-[10px] px-3 py-1 rounded font-black hover:bg-green-500 shadow-lg">APROBAR</button>` : ''}
-                            <button onclick='descargarInforme(${JSON.stringify(pro).replace(/'/g, "&apos;")})' class="bg-blue-600 text-[10px] px-3 py-1 rounded font-black shadow-lg">PDF</button>
-                            <button onclick="gestionarProyecto(${pro.id}, 'borrar')" class="bg-red-600 text-[10px] px-3 py-1 rounded font-black shadow-lg">BORRAR</button>
+                            ${!pro.aprobado ? `<button onclick="gestionarProyecto(${pro.id}, 'aprobar')" class="bg-green-600 text-[10px] px-3 py-1 rounded font-black hover:bg-green-500 shadow-lg">Aprobar</button>` : ''}
+                            <button onclick='descargarInforme(${JSON.stringify(pro).replace(/'/g, "&apos;")})' class="bg-blue-600 text-[10px] px-3 py-1 rounded font-black shadow-lg">Informe PDF</button>
+                            <button onclick="gestionarProyecto(${pro.id}, 'borrar')" class="bg-red-600 text-[10px] px-3 py-1 rounded font-black shadow-lg">Borrar</button>
                         </div>` : ''}
                         <h4 class="text-2xl font-black text-white uppercase mb-2 tracking-tighter">${pro.titulo}</h4>
                         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4 text-[9px] font-bold text-slate-500 uppercase tracking-widest leading-tight">
                             <div>Líder: <br><span class="text-white">${pro.proponente}</span></div>
                             <div>Lugar: <br><span class="text-white">${pro.lugar || 'Sede'}</span></div>
                             <div>Fecha: <br><span class="text-white">${pro.fecha_tentativa}</span></div>
-                            <div>Presupuesto: <br><span class="text-white">${pro.presupuesto}</span></div>
+                            <div>Presupuesto: <br><span class="text-white font-black">${pro.presupuesto}</span></div>
                         </div>
                         <p class="text-sm text-slate-300 mb-4 border-l-2 border-rose-600 pl-4 italic leading-relaxed">"${pro.descripcion}"</p>
                     </div>
-                `).join('') || '<p class="text-slate-500 italic text-center p-10 font-bold uppercase tracking-widest">Sin proyectos para mostrar.</p>';
+                `).join('') || '<p class="text-slate-500 italic text-center p-10 font-bold uppercase tracking-widest">Sin proyectos públicos.</p>';
             }
         }
 
