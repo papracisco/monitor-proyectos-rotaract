@@ -17,7 +17,7 @@
         #modal-proyecto { display: none; opacity: 0; z-index: 110; }
         .img-slide { display: none; width: 100%; height: 100%; object-fit: cover; }
         .img-slide.active { display: block; }
-        .lider-card { cursor: pointer; transition: border-color 0.3s ease; }
+        .lider-card { cursor: pointer; transition: all 0.3s ease; }
     </style>
 </head>
 <body class="bg-slate-950 text-white font-sans selection:bg-rose-500/30 overflow-x-hidden text-left">
@@ -32,7 +32,7 @@
                 <div class="h-10 w-[1px] bg-slate-800 hidden lg:block"></div>
                 <div class="hidden sm:flex flex-col text-left">
                     <h1 class="text-xl font-bold tracking-tighter text-rose-500 uppercase italic leading-none">Monitor <span class="text-white">Proyectos</span></h1>
-                    <span class="text-[9px] text-slate-500 font-bold tracking-[0.2em] mt-1 uppercase">Periodo 2025-2026</span>
+                    <span class="text-[9px] text-slate-500 font-bold tracking-[0.2em] mt-1 uppercase">Periodo 2024-2025</span>
                 </div>
             </div>
             <div class="flex flex-col items-center md:items-end gap-1">
@@ -54,17 +54,22 @@
             <div class="relative overflow-hidden rounded-3xl shadow-2xl border border-slate-800 h-64 lg:h-80" id="header-img">
                 <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000" class="img-slide active">
                 <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1000" class="img-slide">
+                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1000" class="img-slide">
                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent pointer-events-none"></div>
             </div>
         </div>
 
         <div class="mb-16" id="seccion-lideres">
-            <h3 class="text-xs font-black tracking-[0.3em] text-slate-500 uppercase mb-8 flex items-center gap-4 italic font-bold">Líderes de Comité 2025-2026 <span class="h-px bg-slate-800 flex-grow"></span></h3>
+            <h3 class="text-xs font-black tracking-[0.3em] text-slate-500 uppercase mb-8 flex items-center gap-4 italic font-bold">Líderes de Comité 2024-2025 <span class="h-px bg-slate-800 flex-grow"></span></h3>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                 <div class="lider-card bg-slate-900/40 border border-slate-800 p-4 rounded-2xl"><p class="text-[8px] text-rose-500 font-black uppercase mb-1 tracking-widest leading-none">Rosa y Salud</p><p class="text-xs font-bold text-white italic">Nicolth Romero</p></div>
                 <div class="lider-card bg-slate-900/40 border border-slate-800 p-4 rounded-2xl"><p class="text-[8px] text-rose-500 font-black uppercase mb-1 tracking-widest leading-none">Ambiental</p><p class="text-xs font-bold text-white italic">Aisha Ramirez</p></div>
                 <div class="lider-card bg-slate-900/40 border border-slate-800 p-4 rounded-2xl"><p class="text-[8px] text-rose-500 font-black uppercase mb-1 tracking-widest leading-none">Membresía</p><p class="text-xs font-bold text-white italic">Andrew Barrios</p></div>
-                <div class="lider-card bg-slate-900/40 border border-slate-800 p-4 rounded-2xl"><p class="text-[8px] text-rose-500 font-black uppercase mb-1 tracking-widest leading-none">Proyectos</p><p class="text-xs font-bold text-white italic">Emmanuel Gonzalez</p></div>
+                <div class="lider-card bg-slate-900/40 border border-slate-800 p-4 rounded-2xl"><p class="text-[8px] text-rose-500 font-black uppercase mb-1 tracking-widest leading-none">Proyectos de Servicio</p><p class="text-xs font-bold text-white italic">Emmanuel Gonzalez</p></div>
+                <div class="lider-card bg-slate-900/40 border border-slate-800 p-4 rounded-2xl"><p class="text-[8px] text-rose-500 font-black uppercase mb-1 tracking-widest leading-none">Comité DEI</p><p class="text-xs font-bold text-white italic">Alci Padilla</p></div>
+                <div class="lider-card bg-slate-900/40 border border-slate-800 p-4 rounded-2xl"><p class="text-[8px] text-rose-500 font-black uppercase mb-1 tracking-widest leading-none">Imagen</p><p class="text-xs font-bold text-white italic">Gabriel Hernandez</p></div>
+                <div class="lider-card bg-slate-900/40 border border-slate-800 p-4 rounded-2xl"><p class="text-[8px] text-rose-500 font-black uppercase mb-1 tracking-widest leading-none">Internacional</p><p class="text-xs font-bold text-white italic">Omar Sanchez</p></div>
+                <div class="lider-card bg-slate-900/40 border border-slate-800 p-4 rounded-2xl"><p class="text-[8px] text-rose-500 font-black uppercase mb-1 tracking-widest leading-none">Fomento Prof.</p><p class="text-xs font-bold text-white italic">Mafer Leañez</p></div>
                 <div class="lider-card bg-slate-900/40 border border-slate-800 p-4 rounded-2xl"><p class="text-[8px] text-rose-500 font-black uppercase mb-1 tracking-widest leading-none">Fund. Rotaria</p><p class="text-xs font-bold text-white italic">Isabel Avendaño</p></div>
             </div>
         </div>
@@ -78,14 +83,18 @@
             <div class="lg:col-span-4" id="form-container">
                 <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 shadow-2xl sticky top-28">
                     <h3 class="text-xl font-bold mb-6 flex items-center gap-2"><span class="w-2 h-6 bg-rose-500 rounded-full"></span>Nuevo Reporte</h3>
-                    <div class="space-y-4 text-sm text-white text-left">
+                    <div class="space-y-4 text-sm text-white">
                         <input type="text" id="socio" placeholder="Tu nombre" class="w-full bg-slate-950 border border-slate-800 p-4 rounded-xl outline-none">
                         <select id="comite" class="w-full bg-slate-950 border border-slate-800 p-4 rounded-xl text-white outline-none cursor-pointer">
                             <option value="Rosa y Salud">Rosa y Salud</option>
                             <option value="Ambiental">Ambiental</option>
                             <option value="Imagen">Imagen</option>
                             <option value="Membresía">Membresía</option>
-                            <option value="Proyectos">Proyectos de Servicio</option>
+                            <option value="Proyectos de Servicio">Proyectos de Servicio</option>
+                            <option value="Internacional">Internacional</option>
+                            <option value="Fomento Profesional">Fomento Profesional</option>
+                            <option value="Fundación Rotaria">Fundación Rotaria</option>
+                            <option value="DEI">DEI</option>
                         </select>
                         <select id="estado" class="w-full bg-slate-950 border border-slate-800 p-4 rounded-xl text-white outline-none cursor-pointer">
                             <option value="🟢 En marcha">🟢 En marcha</option>
@@ -93,7 +102,7 @@
                             <option value="🔴 Crítico">🔴 Crítico</option>
                         </select>
                         <textarea id="avance" placeholder="Resumen del día..." rows="4" class="w-full bg-slate-950 border border-slate-800 p-4 rounded-xl outline-none text-white resize-none"></textarea>
-                        <button onclick="registrarAvance()" class="w-full bg-rose-600 hover:bg-rose-500 text-white font-black py-4 rounded-xl transition-all uppercase tracking-widest text-xs italic shadow-lg">Publicar</button>
+                        <button onclick="registrarAvance()" class="w-full bg-rose-600 hover:bg-rose-500 text-white font-black py-4 rounded-xl transition-all uppercase tracking-widest text-xs italic">Publicar</button>
                     </div>
                 </div>
             </div>
@@ -106,6 +115,20 @@
             </div>
         </div>
     </main>
+
+    <div id="panel-directiva" class="fixed top-0 right-0 h-full w-80 bg-slate-900 border-l border-slate-800 p-8 shadow-2xl text-left">
+        <div class="flex justify-between items-center mb-10">
+            <div><h3 class="text-rose-500 font-black tracking-widest uppercase text-sm leading-none">Junta Directiva</h3><p class="text-[10px] text-slate-500 uppercase">2024-2025</p></div>
+            <button onclick="toggleDirectiva()" class="text-slate-500 text-3xl hover:text-white">&times;</button>
+        </div>
+        <div class="space-y-6 text-sm text-white">
+            <div class="directiva-item border-l-2 border-rose-600 pl-4 uppercase text-[9px] text-slate-500 font-bold"><p>Presidente</p><p class="text-white text-sm normal-case font-normal italic tracking-tight">José Francisco Parada</p></div>
+            <div class="directiva-item border-l-2 border-slate-700 pl-4 uppercase text-[9px] text-slate-500 font-bold"><p>Vicepresidente</p><p class="text-white text-sm normal-case font-normal italic tracking-tight">Aisha Ramirez</p></div>
+            <div class="directiva-item border-l-2 border-slate-700 pl-4 uppercase text-[9px] text-slate-500 font-bold"><p>Secretaria</p><p class="text-white text-sm normal-case font-normal italic tracking-tight">Isabel Avendaño</p></div>
+            <div class="directiva-item border-l-2 border-slate-700 pl-4 uppercase text-[9px] text-slate-500 font-bold"><p>Tesorero</p><p class="text-white text-sm normal-case font-normal italic tracking-tight">Omar Sanchez</p></div>
+            <div class="directiva-item border-l-2 border-slate-700 pl-4 uppercase text-[9px] text-slate-500 font-bold"><p>Macero</p><p class="text-white text-sm normal-case font-normal italic tracking-tight">Andrew Barrios</p></div>
+        </div>
+    </div>
 
     <div id="modal-proyecto" class="fixed inset-0 bg-slate-950/95 backdrop-blur-xl items-center justify-center p-4">
         <div class="bg-slate-900 border border-slate-800 w-full max-w-2xl rounded-3xl p-8 max-h-[90vh] overflow-y-auto custom-scrollbar">
@@ -126,41 +149,22 @@
         </div>
     </div>
 
-    <div id="panel-directiva" class="fixed top-0 right-0 h-full w-80 bg-slate-900 border-l border-slate-800 p-8 shadow-2xl text-left">
-        <div class="flex justify-between items-center mb-10">
-            <div><h3 class="text-rose-500 font-black tracking-widest uppercase text-sm leading-none">Junta Directiva</h3><p class="text-[10px] text-slate-500 uppercase">Periodo 2025-2026</p></div>
-            <button onclick="toggleDirectiva()" class="text-slate-500 text-3xl hover:text-white">&times;</button>
-        </div>
-        <div class="space-y-6 text-sm text-white">
-            <div class="directiva-item border-l-2 border-rose-600 pl-4 font-bold uppercase text-[9px] text-slate-500"><p>Presidente</p><p class="text-white text-sm normal-case font-normal italic">José Francisco Parada</p></div>
-            <div class="directiva-item border-l-2 border-slate-700 pl-4 font-bold uppercase text-[9px] text-slate-500"><p>Vicepresidente</p><p class="text-white text-sm normal-case font-normal italic tracking-tight">Aisha Ramirez</p></div>
-            <div class="directiva-item border-l-2 border-slate-700 pl-4 font-bold uppercase text-[9px] text-slate-500"><p>Secretaria</p><p class="text-white text-sm normal-case font-normal italic">Isabel Avendaño</p></div>
-            <div class="directiva-item border-l-2 border-slate-700 pl-4 font-bold uppercase text-[9px] text-slate-500"><p>Tesorero</p><p class="text-white text-sm normal-case font-normal italic">Omar Sanchez</p></div>
-            <div class="directiva-item border-l-2 border-slate-700 pl-4 font-bold uppercase text-[9px] text-slate-500"><p>Macero</p><p class="text-white text-sm normal-case font-normal italic">Andrew Barrios</p></div>
-        </div>
-    </div>
-
     <div id="overlay" onclick="toggleDirectiva()" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity"></div>
 
     <script>
         const supabaseUrl = 'https://xtpomofjzgasonismvhk.supabase.co';
         const supabaseKey = 'sb_publishable_JGr1esddA3MsWUzbtGpVVQ_bWElIRK-';
         const _supabase = supabase.createClient(supabaseUrl, supabaseKey);
-        
-        let isAdmin = false;
-        let activeTab = 'reportes';
-        let currentSlide = 0;
+        let isAdmin = false, activeTab = 'reportes', currentSlide = 0;
 
         window.onload = () => {
             gsap.from("#nav-logo", { duration: 1, x: -50, opacity: 0, ease: "power3.out" });
             gsap.from("#header-text", { duration: 1, y: 30, opacity: 0, ease: "back.out(1.7)" });
             gsap.from(".lider-card", { duration: 0.8, scale: 0.9, opacity: 0, stagger: 0.1, ease: "power2.out" });
-
             document.querySelectorAll('.lider-card').forEach(card => {
-                card.addEventListener('mouseenter', () => { gsap.to(card, { duration: 0.3, y: -10, borderColor: '#e11d48', scale: 1.05, ease: "power2.out" }); });
-                card.addEventListener('mouseleave', () => { gsap.to(card, { duration: 0.3, y: 0, borderColor: '#1e293b', scale: 1, ease: "power2.out" }); });
+                card.addEventListener('mouseenter', () => gsap.to(card, { duration: 0.3, y: -10, borderColor: '#e11d48', scale: 1.05, ease: "power2.out" }));
+                card.addEventListener('mouseleave', () => gsap.to(card, { duration: 0.3, y: 0, borderColor: '#1e293b', scale: 1, ease: "power2.out" }));
             });
-
             const slides = document.querySelectorAll('.img-slide');
             setInterval(() => {
                 slides[currentSlide].classList.remove('active');
@@ -168,42 +172,53 @@
                 slides[currentSlide].classList.add('active');
                 gsap.fromTo(slides[currentSlide], { opacity: 0 }, { duration: 1, opacity: 1 });
             }, 5000);
-
             cargarDatos();
         };
 
         function toggleDirectiva() {
-            const p = document.getElementById('panel-directiva');
-            const o = document.getElementById('overlay');
-            const h = p.style.transform === 'translateX(0%)';
-            if(!h) {
-                o.classList.remove('hidden');
-                gsap.to(o, {duration: 0.3, opacity: 1});
-                gsap.to(p, {duration: 0.6, x: "0%", ease: "power3.out"});
-            } else {
-                gsap.to(p, {duration: 0.5, x: "100%", ease: "power3.in"});
-                gsap.to(o, {duration: 0.3, opacity: 0, onComplete: () => o.classList.add('hidden')});
-            }
+            const p = document.getElementById('panel-directiva'), o = document.getElementById('overlay'), h = p.style.transform === 'translateX(0%)';
+            if(!h) { o.classList.remove('hidden'); gsap.to(o, {duration: 0.3, opacity: 1}); gsap.to(p, {duration: 0.6, x: "0%", ease: "power3.out"}); }
+            else { gsap.to(p, {duration: 0.5, x: "100%", ease: "power3.in"}); gsap.to(o, {duration: 0.3, opacity: 0, onComplete: () => o.classList.add('hidden')}); }
         }
 
         function toggleModal() {
-            const m = document.getElementById('modal-proyecto');
-            const v = m.style.display === 'flex';
-            if(!v) {
-                m.style.display = 'flex';
-                gsap.fromTo(m, {opacity: 0}, {duration: 0.3, opacity: 1});
-                gsap.fromTo(m.children[0], {scale: 0.8, y: 50}, {duration: 0.5, scale: 1, y: 0, ease: "back.out(1.7)"});
-            } else {
-                gsap.to(m, {duration: 0.3, opacity: 0, onComplete: () => m.style.display = 'none'});
-            }
+            const m = document.getElementById('modal-proyecto'), v = m.style.display === 'flex';
+            if(!v) { m.style.display = 'flex'; gsap.fromTo(m, {opacity: 0}, {duration: 0.3, opacity: 1}); gsap.fromTo(m.children[0], {scale: 0.8, y: 50}, {duration: 0.5, scale: 1, y: 0, ease: "back.out(1.7)"}); }
+            else { gsap.to(m, {duration: 0.3, opacity: 0, onComplete: () => m.style.display = 'none'}); }
         }
+
+        async function registrarAvance() {
+            const socio = document.getElementById('socio').value, comite = document.getElementById('comite').value, estado = document.getElementById('estado').value, avance = document.getElementById('avance').value;
+            if(!socio || !avance) return alert("Completa los campos.");
+            const { error } = await _supabase.from('reportes').insert([{ socio, comite, avance, estado }]);
+            if (error) alert(error.message); else { alert("¡Reporte publicado!"); document.getElementById('avance').value = ""; cargarDatos(); }
+        }
+
+        async function enviarPropuesta() {
+            const d = { titulo: document.getElementById('p-titulo').value, proponente: document.getElementById('p-socio').value, fecha_tentativa: document.getElementById('p-fecha').value || new Date().toISOString().split('T')[0], lugar: document.getElementById('p-lugar').value, presupuesto: document.getElementById('p-presu').value, descripcion: document.getElementById('p-desc').value, aliados: document.getElementById('p-aliados').value, aprobado: false };
+            if(!d.titulo || !d.proponente) return alert("Faltan datos.");
+            const { error } = await _supabase.from('proyectos_actividades').insert([d]);
+            if(error) alert(error.message); else { alert("¡Propuesta enviada!"); toggleModal(); cargarDatos(); }
+        }
+
+        async function eliminar(t, id) { if(confirm("¿Borrar definitivamente?")) { await _supabase.from(t).delete().eq('id', id); cargarDatos(); } }
+        async function aprobar(id) { await _supabase.from('proyectos_actividades').update({ aprobado: true }).eq('id', id); cargarDatos(); }
+
+        function pdf(pro) {
+            const { jsPDF } = window.jspdf; const doc = new jsPDF();
+            doc.setFillColor(225, 29, 72); doc.rect(0, 0, 210, 40, 'F'); doc.setTextColor(255, 255, 255); doc.setFontSize(22); doc.setFont("helvetica", "bold"); doc.text("INFORME TÉCNICO", 20, 20); doc.setFontSize(10); doc.text("ROTARACT LAS DELICIAS - DISTRITO 4370", 20, 30);
+            doc.autoTable({ startY: 50, head: [['Campo', 'Detalle']], body: [['Título', pro.titulo], ['Líder', pro.proponente], ['Fecha', pro.fecha_tentativa], ['Lugar', pro.lugar || 'Sede'], ['Presupuesto', pro.presupuesto], ['Aliados', pro.aliados || 'Ninguno']], headStyles: { fillColor: [225, 29, 72] } });
+            let fY = doc.lastAutoTable.finalY + 15; doc.setTextColor(0,0,0); doc.setFontSize(12); doc.setFont("helvetica", "bold"); doc.text("DESCRIPCIÓN:", 20, fY); doc.setFont("helvetica", "normal"); doc.setFontSize(10); const lines = doc.splitTextToSize(pro.descripcion, 170); doc.text(lines, 20, fY + 7); doc.save(`Informe_${pro.titulo.replace(/\s+/g, '_')}.pdf`);
+        }
+
+        function switchTab(t) { activeTab = t; document.getElementById('tab-reportes').className = t === 'reportes' ? 'px-6 py-2 rounded-xl text-xs font-black uppercase bg-rose-600 text-white transition-all' : 'px-6 py-2 rounded-xl text-xs font-black uppercase text-slate-500 transition-all'; document.getElementById('tab-proyectos').className = t === 'proyectos' ? 'px-6 py-2 rounded-xl text-xs font-black uppercase bg-rose-600 text-white transition-all' : 'px-6 py-2 rounded-xl text-xs font-black uppercase text-slate-500 transition-all'; cargarDatos(); }
+        function authAdmin() { if(prompt("Clave Presidente:") === "Delicias2026") { isAdmin = !isAdmin; alert("Admin: " + isAdmin); cargarDatos(); } }
 
         async function cargarDatos() {
             const c = document.getElementById('contenedor-principal');
             let q = (activeTab === 'reportes') ? _supabase.from('reportes').select('*').order('created_at', { ascending: false }) : _supabase.from('proyectos_actividades').select('*').order('created_at', { ascending: false });
             if (activeTab === 'proyectos' && !isAdmin) q = q.eq('aprobado', true);
             const { data } = await q;
-            
             c.innerHTML = (data || []).map(item => {
                 if(activeTab === 'reportes') return `
                     <div class="card-anim bg-slate-900 border-l-4 ${item.estado.includes('🔴') ? 'border-red-500' : item.estado.includes('🟡') ? 'border-yellow-500' : 'border-green-500'} p-6 rounded-2xl relative mb-4 shadow-xl">
@@ -217,77 +232,21 @@
                         ${item.aprobado ? '<span class="bg-green-600 text-[8px] font-black px-3 py-1 rounded-full absolute -top-2 left-6 uppercase text-white shadow-lg">Aprobado ✅</span>' : '<span class="bg-yellow-600 text-[8px] font-black px-3 py-1 rounded-full absolute -top-2 left-6 uppercase text-white shadow-lg">Pendiente ⏳</span>'}
                         ${isAdmin ? `<div class="absolute top-4 right-4 flex gap-2">
                             ${!item.aprobado ? `<button onclick="aprobar(${item.id})" class="bg-green-600 text-[10px] px-3 py-1 rounded font-black hover:bg-green-500 shadow-lg">Aprobar</button>` : ''}
-                            <button onclick='descargarInforme(${JSON.stringify(item).replace(/'/g, "&apos;")})' class="bg-blue-600 text-[10px] px-3 py-1 rounded font-black shadow-lg">Informe PDF</button>
+                            <button onclick='pdf(${JSON.stringify(item).replace(/'/g, "&apos;")})' class="bg-blue-600 text-[10px] px-3 py-1 rounded font-black shadow-lg">PDF</button>
                             <button onclick="eliminar('proyectos_actividades', ${item.id})" class="bg-red-600 text-[10px] px-3 py-1 rounded font-black shadow-lg">Borrar</button>
                         </div>` : ''}
-                        <h4 class="text-2xl font-black text-white uppercase mb-2 tracking-tighter italic">${item.titulo}</h4>
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4 text-[9px] font-bold text-slate-500 uppercase">
+                        <h4 class="text-2xl font-black text-white uppercase mb-2 italic">${item.titulo}</h4>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4 text-[9px] font-bold text-slate-500 uppercase tracking-widest leading-tight">
                             <div>Líder: <br><span class="text-white">${item.proponente}</span></div>
                             <div>Lugar: <br><span class="text-white">${item.lugar || 'Sede'}</span></div>
                             <div>Fecha: <br><span class="text-white">${item.fecha_tentativa}</span></div>
-                            <div>Presupuesto: <br><span class="text-white font-black">${item.presupuesto}</span></div>
+                            <div>Monto: <br><span class="text-white font-black">${item.presupuesto}</span></div>
                         </div>
-                        <p class="text-sm text-slate-300 mb-4 border-l-2 border-rose-600 pl-4 italic leading-relaxed">"${item.descripcion}"</p>
+                        <p class="text-sm text-slate-300 mb-4 border-l-2 border-rose-600 pl-4 italic">"${item.descripcion}"</p>
                     </div>`;
             }).join('');
-            
             gsap.from(".card-anim", { duration: 0.6, y: 20, opacity: 0, stagger: 0.1, ease: "power2.out" });
         }
-
-        async function registrarAvance() {
-            const socio = document.getElementById('socio').value;
-            const comite = document.getElementById('comite').value;
-            const estado = document.getElementById('estado').value;
-            const avance = document.getElementById('avance').value;
-            if(!socio || !avance) return alert("Completa los campos.");
-            const { error } = await _supabase.from('reportes').insert([{ socio, comite, avance, estado }]);
-            if (error) alert(error.message);
-            else { alert("¡Reporte publicado!"); document.getElementById('avance').value = ""; cargarDatos(); }
-        }
-
-        async function enviarPropuesta() {
-            const d = { titulo: document.getElementById('p-titulo').value, proponente: document.getElementById('p-socio').value, fecha_tentativa: document.getElementById('p-fecha').value || new Date().toISOString().split('T')[0], lugar: document.getElementById('p-lugar').value, presupuesto: document.getElementById('p-presu').value, descripcion: document.getElementById('p-desc').value, aliados: document.getElementById('p-aliados').value, aprobado: false };
-            if(!d.titulo || !d.proponente) return alert("Faltan datos.");
-            const { error } = await _supabase.from('proyectos_actividades').insert([d]);
-            if(error) alert(error.message);
-            else { alert("¡Propuesta enviada!"); toggleModal(); cargarDatos(); }
-        }
-
-        async function eliminar(tabla, id) { if(confirm("¿Borrar definitivamente?")) { await _supabase.from(tabla).delete().eq('id', id); cargarDatos(); } }
-        async function aprobar(id) { await _supabase.from('proyectos_actividades').update({ aprobado: true }).eq('id', id); cargarDatos(); }
-
-        function descargarInforme(pro) {
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF();
-            doc.setFillColor(225, 29, 72); doc.rect(0, 0, 210, 40, 'F');
-            doc.setTextColor(255, 255, 255); doc.setFontSize(22); doc.setFont("helvetica", "bold");
-            doc.text("INFORME TÉCNICO DE ACTIVIDAD", 20, 20);
-            doc.setFontSize(10); doc.text("ROTARACT LAS DELICIAS - DISTRITO 4370", 20, 30);
-
-            doc.setTextColor(0,0,0); doc.setFontSize(12); doc.text("FICHA DE PROYECTO (RESUMEN MYROTARY)", 20, 55);
-            doc.autoTable({
-                startY: 60,
-                head: [['Campo', 'Detalle']],
-                body: [['Título', pro.titulo], ['Líder', pro.proponente], ['Fecha', pro.fecha_tentativa], ['Lugar', pro.lugar || 'Sede'], ['Presupuesto', pro.presupuesto], ['Aliados', pro.aliados || 'Ninguno']],
-                headStyles: { fillColor: [225, 29, 72] }
-            });
-
-            let finalY = doc.lastAutoTable.finalY + 15;
-            doc.setFontSize(12); doc.setFont("helvetica", "bold"); doc.text("DESCRIPCIÓN DE IMPACTO:", 20, finalY);
-            doc.setFont("helvetica", "normal"); doc.setFontSize(10);
-            const descLines = doc.splitTextToSize(pro.descripcion, 170);
-            doc.text(descLines, 20, finalY + 7);
-            doc.save(`Informe_${pro.titulo.replace(/\s+/g, '_')}.pdf`);
-        }
-
-        function switchTab(t) {
-            activeTab = t;
-            document.getElementById('tab-reportes').className = t === 'reportes' ? 'px-6 py-2 rounded-xl text-xs font-black uppercase bg-rose-600 text-white transition-all' : 'px-6 py-2 rounded-xl text-xs font-black uppercase text-slate-500 transition-all';
-            document.getElementById('tab-proyectos').className = t === 'proyectos' ? 'px-6 py-2 rounded-xl text-xs font-black uppercase bg-rose-600 text-white transition-all' : 'px-6 py-2 rounded-xl text-xs font-black uppercase text-slate-500 transition-all';
-            cargarDatos();
-        }
-
-        function authAdmin() { if(prompt("Clave Presidente:") === "Delicias2026") { isAdmin = !isAdmin; alert("Admin Activado: " + isAdmin); cargarDatos(); } }
     </script>
 </body>
 </html>
