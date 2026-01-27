@@ -47,7 +47,7 @@
     <main class="max-w-7xl mx-auto p-6 lg:p-10 text-left">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12 items-center">
             <div class="space-y-6" id="header-text">
-                <h2 class="text-5xl lg:text-7xl font-black leading-tight italic">Gestión <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-orange-400 font-black italic">Activa.</span></h2>
+                <h2 class="text-5xl lg:text-7xl font-black leading-tight italic">Gestión <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-orange-400 font-black italic">Transformadora.</span></h2>
                 <div class="flex flex-wrap gap-3">
                     <button onclick="abrirModal('PROPUESTA')" class="bg-rose-600 hover:bg-rose-500 px-6 py-3 rounded-xl font-black uppercase text-[10px] transition-all shadow-lg italic">🚀 Proponer Proyecto</button>
                     <button onclick="abrirModal('EJECUTADO')" class="bg-slate-800 hover:bg-slate-700 px-6 py-3 rounded-xl font-black uppercase text-[10px] transition-all shadow-lg italic border border-slate-700">✅ Cargar Ejecutado</button>
@@ -92,7 +92,7 @@
                             <option value="Ambiental">Ambiental</option>
                             <option value="Imagen">Imagen</option>
                             <option value="Membresía">Membresía</option>
-                            <option value="Proyectos">Proyectos de Servicio</option>
+                            <option value="Proyectos de Servicio">Proyectos de Servicio</option>
                             <option value="Internacional">Internacional</option>
                             <option value="Fomento Profesional">Fomento Profesional</option>
                             <option value="Fundación Rotaria">Fundación Rotaria</option>
@@ -110,7 +110,7 @@
             </div>
 
             <div class="lg:col-span-8 text-left italic">
-                <div class="flex justify-between items-center mb-6">
+                <div class="flex justify-between items-center mb-6 italic">
                     <h3 id="bitacora-titulo" class="text-xl font-bold text-slate-300 uppercase tracking-tighter italic">Bitácora Diaria</h3>
                     <button onclick="authAdmin()" class="opacity-10 hover:opacity-100 transition-opacity"><svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg></button>
                 </div>
@@ -125,11 +125,11 @@
             <button onclick="toggleDirectiva()" class="text-slate-500 text-3xl">&times;</button>
         </div>
         <div class="space-y-4 text-white">
-            <div class="directiva-item border-l-2 border-rose-600 pl-4 font-bold uppercase text-[9px] text-slate-500"><p>Presidente</p><p class="text-white text-sm normal-case font-normal italic tracking-tight">José Francisco Parada</p></div>
-            <div class="directiva-item border-l-2 border-slate-700 pl-4 font-bold uppercase text-[9px] text-slate-500"><p>Vicepresidente</p><p class="text-white text-sm normal-case font-normal italic tracking-tight">Aisha Ramirez</p></div>
-            <div class="directiva-item border-l-2 border-slate-700 pl-4 font-bold uppercase text-[9px] text-slate-500"><p>Secretaria</p><p class="text-white text-sm normal-case font-normal italic tracking-tight">Isabel Avendaño</p></div>
-            <div class="directiva-item border-l-2 border-slate-700 pl-4 font-bold uppercase text-[9px] text-slate-500"><p>Tesorero</p><p class="text-white text-sm normal-case font-normal italic tracking-tight">Omar Sanchez</p></div>
-            <div class="directiva-item border-l-2 border-slate-700 pl-4 font-bold uppercase text-[9px] text-slate-500"><p>Macero</p><p class="text-white text-sm normal-case font-normal italic tracking-tight">Andrew Barrios</p></div>
+            <div class="directiva-item border-l-2 border-rose-600 pl-4 font-bold uppercase text-[9px] text-slate-500"><p>Presidente</p><p class="text-white text-sm normal-case font-normal italic">José Francisco Parada</p></div>
+            <div class="directiva-item border-l-2 border-slate-700 pl-4 font-bold uppercase text-[9px] text-slate-500"><p>Vicepresidente</p><p class="text-white text-sm normal-case font-normal italic">Aisha Ramirez</p></div>
+            <div class="directiva-item border-l-2 border-slate-700 pl-4 font-bold uppercase text-[9px] text-slate-500"><p>Secretaria</p><p class="text-white text-sm normal-case font-normal italic">Isabel Avendaño</p></div>
+            <div class="directiva-item border-l-2 border-slate-700 pl-4 font-bold uppercase text-[9px] text-slate-500"><p>Tesorero</p><p class="text-white text-sm normal-case font-normal italic">Omar Sanchez</p></div>
+            <div class="directiva-item border-l-2 border-slate-700 pl-4 font-bold uppercase text-[9px] text-slate-500"><p>Macero</p><p class="text-white text-sm normal-case font-normal italic">Andrew Barrios</p></div>
         </div>
     </div>
 
@@ -139,7 +139,7 @@
                 <h3 id="modal-titulo" class="text-xl font-black text-rose-500 uppercase italic">Título Modal</h3>
                 <button onclick="toggleModal()" class="text-slate-500 text-3xl hover:text-white">&times;</button>
             </div>
-            <div id="form-dinamico" class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-left"></div>
+            <div id="form-dinamico" class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-left italic"></div>
             <button id="btn-enviar" class="w-full bg-rose-600 hover:bg-rose-500 text-white font-black py-4 rounded-xl mt-8 uppercase tracking-widest transition-all italic">Guardar en Sistema</button>
         </div>
     </div>
@@ -152,7 +152,6 @@
         const _supabase = supabase.createClient(supabaseUrl, supabaseKey);
         let isAdmin = false, activeTab = 'reportes', currentSlide = 0;
 
-        // --- GSAP Y CARGA INICIAL ---
         window.onload = () => {
             gsap.from("#nav-logo", { duration: 1, x: -50, opacity: 0, ease: "power3.out" });
             gsap.from("#header-text", { duration: 1, y: 30, opacity: 0, ease: "back.out(1.7)" });
@@ -174,7 +173,6 @@
             cargarDatos();
         };
 
-        // --- FUNCIONALIDADES UI ---
         function toggleDirectiva() {
             const p = document.getElementById('panel-directiva'), o = document.getElementById('overlay');
             const h = p.style.visibility === 'hidden' || p.style.visibility === '';
@@ -191,74 +189,99 @@
         function abrirModal(tipo) {
             const f = document.getElementById('form-dinamico');
             f.innerHTML = `
-                <div class="md:col-span-2"><label class="text-[10px] text-slate-500 font-bold ml-2">TÍTULO</label><input type="text" id="m-titulo" class="w-full bg-slate-950 border border-slate-800 p-4 rounded-xl outline-none"></div>
-                <div><label class="text-[10px] text-slate-500 font-bold ml-2">SOCIO</label><input type="text" id="m-socio" class="w-full bg-slate-950 border border-slate-800 p-4 rounded-xl outline-none"></div>
-                <div><label class="text-[10px] text-slate-500 font-bold ml-2">FECHA</label><input type="date" id="m-fecha" class="w-full bg-slate-950 border border-slate-800 p-4 rounded-xl outline-none"></div>
-                <div><label class="text-[10px] text-slate-500 font-bold ml-2">LUGAR</label><input type="text" id="m-lugar" class="w-full bg-slate-950 border border-slate-800 p-4 rounded-xl outline-none"></div>
-                <div><label class="text-[10px] text-slate-500 font-bold ml-2">${tipo === 'PROPUESTA' ? 'PRESUPUESTO' : 'HORAS'}</label><input type="text" id="m-extra" class="w-full bg-slate-950 border border-slate-800 p-4 rounded-xl outline-none"></div>
+                <div class="md:col-span-2"><label class="text-[10px] text-slate-500 font-bold ml-2 uppercase">Título</label><input type="text" id="m-titulo" class="w-full bg-slate-950 border border-slate-800 p-4 rounded-xl outline-none"></div>
+                <div><label class="text-[10px] text-slate-500 font-bold ml-2 uppercase">Socio</label><input type="text" id="m-socio" class="w-full bg-slate-950 border border-slate-800 p-4 rounded-xl outline-none"></div>
+                <div><label class="text-[10px] text-slate-500 font-bold ml-2 uppercase">Fecha</label><input type="date" id="m-fecha" class="w-full bg-slate-950 border border-slate-800 p-4 rounded-xl outline-none"></div>
+                <div><label class="text-[10px] text-slate-500 font-bold ml-2 uppercase">Lugar</label><input type="text" id="m-lugar" class="w-full bg-slate-950 border border-slate-800 p-4 rounded-xl outline-none"></div>
+                <div><label class="text-[10px] text-slate-500 font-bold ml-2 uppercase">${tipo === 'PROPUESTA' ? 'Presupuesto' : 'Horas'}</label><input type="text" id="m-extra" class="w-full bg-slate-950 border border-slate-800 p-4 rounded-xl outline-none"></div>
                 <textarea id="m-desc" placeholder="Descripción detallada..." class="md:col-span-2 w-full bg-slate-950 border border-slate-800 p-4 rounded-xl outline-none h-24"></textarea>`;
-            document.getElementById('modal-titulo').innerText = tipo === 'PROPUESTA' ? 'Proponer Actividad' : 'Cargar Actividad Ejecutada';
+            document.getElementById('modal-titulo').innerText = tipo === 'PROPUESTA' ? 'Proponer Actividad' : 'Cargar Ejecución MyRotary';
             document.getElementById('btn-enviar').onclick = () => enviarDatos(tipo);
             toggleModal();
         }
 
-        // --- BACKEND Y DATOS ---
         async function registrarAvance() {
             const s = document.getElementById('socio').value, c = document.getElementById('comite').value, e = document.getElementById('estado').value, a = document.getElementById('avance').value;
-            if(!s || !a) return alert("Faltan datos");
+            if(!s || !a) return alert("Completa los datos");
             await _supabase.from('reportes').insert([{ socio: s, comite: c, estado: e, avance: a }]);
             document.getElementById('avance').value = ""; cargarDatos();
         }
 
         async function enviarDatos(tipo) {
             const table = tipo === 'PROPUESTA' ? 'proyectos_actividades' : 'proyectos_ejecutados';
-            const data = { titulo: document.getElementById('m-titulo').value, proponente: document.getElementById('m-socio').value, fecha_tentativa: document.getElementById('m-fecha').value, lugar: document.getElementById('m-lugar').value, descripcion: document.getElementById('m-desc').value };
-            if(tipo === 'PROPUESTA') data.presupuesto = document.getElementById('m-extra').value; else data.horas_voluntariado = document.getElementById('m-extra').value;
+            const fValue = document.getElementById('m-fecha').value || new Date().toISOString().split('T')[0];
+            const data = { 
+                titulo: document.getElementById('m-titulo').value, 
+                proponente: document.getElementById('m-socio').value, 
+                fecha_tentativa: fValue, 
+                lugar: document.getElementById('m-lugar').value, 
+                descripcion: document.getElementById('m-desc').value 
+            };
+            if(tipo === 'PROPUESTA') data.presupuesto = document.getElementById('m-extra').value; 
+            else { data.horas_voluntariado = document.getElementById('m-extra').value; data.fecha_ejecucion = fValue; delete data.fecha_tentativa; }
+            
             await _supabase.from(table).insert([data]);
             toggleModal(); cargarDatos();
         }
 
         async function cargarDatos() {
             const cont = document.getElementById('contenedor-principal');
+            cont.innerHTML = '<div class="text-center p-10 italic text-slate-500">Sincronizando con base de datos...</div>';
+            
             let q;
             if(activeTab === 'reportes') q = _supabase.from('reportes').select('*').order('created_at', {ascending: false});
             else if(activeTab === 'proyectos') { q = _supabase.from('proyectos_actividades').select('*').order('created_at', {ascending: false}); if(!isAdmin) q = q.eq('aprobado', true); }
             else q = _supabase.from('proyectos_ejecutados').select('*').order('created_at', {ascending: false});
 
-            const { data } = await q;
-            cont.innerHTML = (data || []).map(item => {
-                if(activeTab === 'reportes') return `
-                    <div class="card-anim bg-slate-900 border-l-4 ${item.estado.includes('🔴') ? 'border-red-500' : item.estado.includes('🟡') ? 'border-yellow-500' : 'border-green-500'} p-6 rounded-2xl relative mb-4 shadow-xl">
-                        ${isAdmin ? `<button onclick="eliminar('reportes', ${item.id})" class="absolute top-4 right-4 text-[10px] bg-red-600 px-2 py-1 rounded">Borrar</button>` : ''}
-                        <div class="flex justify-between items-center mb-2"><p class="text-[9px] font-black text-rose-500 uppercase">${item.comite}</p><span class="text-[9px] font-bold text-slate-400">${item.estado}</span></div>
-                        <p class="text-slate-200 text-sm mb-2 font-medium italic">"${item.avance}"</p>
-                        <p class="text-[9px] text-slate-500 font-bold uppercase">${item.socio} • ${new Date(item.created_at).toLocaleDateString()}</p>
-                    </div>`;
-                
-                const tableRef = activeTab === 'proyectos' ? 'proyectos_actividades' : 'proyectos_ejecutados';
-                const showButtons = (activeTab === 'proyectos' || (activeTab === 'historico' && isAdmin)) ? '' : 'hidden';
+            const { data, error } = await q;
+            if(error) { cont.innerHTML = '<p class="text-red-500">Error al cargar datos.</p>'; return; }
 
-                return `
-                    <div class="card-anim bg-slate-900 p-8 rounded-3xl border ${item.aprobado ? 'border-green-500/50' : 'border-yellow-500/20'} mb-6 relative shadow-2xl">
-                        <div class="absolute top-6 right-6 flex gap-2 ${showButtons}">
-                            ${(activeTab === 'proyectos' && !item.aprobado && isAdmin) ? `<button onclick="aprobar(${item.id})" class="bg-green-600 px-3 py-1 rounded text-[10px] font-bold">Aprobar</button>` : ''}
-                            <button onclick='descargarPDF(${JSON.stringify(item).replace(/'/g, "&apos;")})' class="bg-blue-600 px-3 py-1 rounded text-[10px] font-bold">PDF</button>
-                            ${isAdmin ? `<button onclick="eliminar('${tableRef}', ${item.id})" class="bg-red-600 px-3 py-1 rounded text-[10px] font-bold">Borrar</button>` : ''}
-                        </div>
-                        <h4 class="text-2xl font-black italic uppercase italic tracking-tighter mb-2">${item.titulo}</h4>
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-[9px] font-bold text-slate-500 uppercase mb-4">
-                            <div>Socio: <br><span class="text-white">${item.proponente}</span></div>
-                            <div>Fecha: <br><span class="text-white">${item.fecha_tentativa || item.fecha_ejecucion}</span></div>
-                            <div>Lugar: <br><span class="text-white">${item.lugar || 'Sede'}</span></div>
-                        </div>
-                        <p class="text-sm text-slate-300 border-l-2 border-rose-600 pl-4 italic leading-relaxed">"${item.descripcion}"</p>
-                    </div>`;
-            }).join('');
-            gsap.from(".card-anim", {y: 20, opacity: 0, stagger: 0.1, duration: 0.5});
+            cont.innerHTML = (data || []).map(item => generarHTML(item)).join('') || '<p class="text-center p-10 italic text-slate-600">No hay registros en esta sección.</p>';
+            gsap.from(".card-anim", {y: 20, opacity: 0, stagger: 0.05, duration: 0.4});
+        }
+
+        function generarHTML(item) {
+            if(activeTab === 'reportes') return `
+                <div class="card-anim bg-slate-900 border-l-4 ${item.estado.includes('🔴') ? 'border-red-500' : item.estado.includes('🟡') ? 'border-yellow-500' : 'border-green-500'} p-6 rounded-2xl relative mb-4 shadow-xl">
+                    ${isAdmin ? `<button onclick="eliminar('reportes', ${item.id})" class="absolute top-4 right-4 text-[10px] bg-red-600 px-2 py-1 rounded">Borrar</button>` : ''}
+                    <div class="flex justify-between items-center mb-2"><p class="text-[9px] font-black text-rose-500 uppercase">${item.comite}</p><span class="text-[9px] font-bold text-slate-400">${item.estado}</span></div>
+                    <p class="text-slate-200 text-sm mb-2 font-medium italic">"${item.avance}"</p>
+                    <p class="text-[9px] text-slate-500 font-bold uppercase">${item.socio} • ${new Date(item.created_at).toLocaleDateString()}</p>
+                </div>`;
+            
+            const tableRef = activeTab === 'proyectos' ? 'proyectos_actividades' : 'proyectos_ejecutados';
+            const showButtons = (activeTab === 'proyectos' || (activeTab === 'historico' && isAdmin)) ? '' : 'hidden';
+
+            return `
+                <div class="card-anim bg-slate-900 p-8 rounded-3xl border border-slate-800 mb-6 relative shadow-2xl">
+                    <div class="absolute top-6 right-6 flex gap-2 ${showButtons}">
+                        ${(activeTab === 'proyectos' && !item.aprobado && isAdmin) ? `<button onclick="aprobar(${item.id})" class="bg-green-600 px-3 py-1 rounded text-[10px] font-bold">Aprobar</button>` : ''}
+                        <button onclick='descargarPDF(${JSON.stringify(item).replace(/'/g, "&apos;")})' class="bg-blue-600 px-3 py-1 rounded text-[10px] font-bold">PDF</button>
+                        ${isAdmin ? `<button onclick="eliminar('${tableRef}', ${item.id})" class="bg-red-600 px-3 py-1 rounded text-[10px] font-bold">Borrar</button>` : ''}
+                    </div>
+                    <h4 class="text-2xl font-black italic uppercase tracking-tighter mb-2">${item.titulo}</h4>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-[9px] font-bold text-slate-500 uppercase mb-4 italic">
+                        <div>Socio: <br><span class="text-white">${item.proponente}</span></div>
+                        <div>Fecha: <br><span class="text-white">${item.fecha_tentativa || item.fecha_ejecucion}</span></div>
+                        <div>Lugar: <br><span class="text-white">${item.lugar || 'Sede'}</span></div>
+                        <div>${activeTab === 'proyectos' ? 'Presu:' : 'Horas:'} <br><span class="text-white">${item.presupuesto || item.horas_voluntariado || '0'}</span></div>
+                    </div>
+                    <p class="text-sm text-slate-300 border-l-2 border-rose-600 pl-4 italic leading-relaxed">"${item.descripcion}"</p>
+                </div>`;
+        }
+
+        function switchTab(t) {
+            activeTab = t;
+            ['reportes', 'proyectos', 'historico'].forEach(id => {
+                document.getElementById('tab-'+id).className = id === t ? 'px-5 py-2 rounded-lg text-[10px] font-black uppercase bg-rose-600 text-white' : 'px-5 py-2 rounded-lg text-[10px] font-black uppercase text-slate-500';
+            });
+            document.getElementById('bitacora-titulo').innerText = t === 'reportes' ? 'Bitácora Diaria' : t === 'proyectos' ? 'Propuestas de Proyectos' : 'Histórico MyRotary';
+            cargarDatos();
         }
 
         async function aprobar(id) { await _supabase.from('proyectos_actividades').update({ aprobado: true }).eq('id', id); cargarDatos(); }
         async function eliminar(t, id) { if(confirm("¿Borrar definitivamente?")) { await _supabase.from(t).delete().eq('id', id); cargarDatos(); } }
+        function authAdmin() { if(prompt("Clave:") === "Delicias2026") { isAdmin = !isAdmin; alert("Estado Admin: " + isAdmin); cargarDatos(); } }
 
         function descargarPDF(pro) {
             const { jsPDF } = window.jspdf; const doc = new jsPDF();
@@ -269,9 +292,6 @@
             doc.setFontSize(10); const lines = doc.splitTextToSize(pro.descripcion, 170); doc.text(lines, 20, fY + 7);
             doc.save(`Informe_${pro.titulo}.pdf`);
         }
-
-        function switchTab(t) { activeTab = t; ['reportes', 'proyectos', 'historico'].forEach(id => { document.getElementById('tab-'+id).className = id === t ? 'px-5 py-2 rounded-lg text-[10px] font-black uppercase bg-rose-600' : 'px-5 py-2 rounded-lg text-[10px] font-black uppercase text-slate-500'; }); document.getElementById('bitacora-titulo').innerText = t === 'reportes' ? 'Bitácora Diaria' : t === 'proyectos' ? 'Propuestas de Proyectos' : 'Histórico MyRotary'; cargarDatos(); }
-        function authAdmin() { if(prompt("Clave:") === "Delicias2026") { isAdmin = !isAdmin; alert("Admin: " + isAdmin); cargarDatos(); } }
     </script>
 </body>
 </html>
