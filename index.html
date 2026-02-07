@@ -246,12 +246,47 @@
             document.getElementById('btn-enviar').onclick = () => enviarDatos(tipo);
             toggleModal();
         }
-        async function enviarDatos(tipo) { const data = { titulo: document.getElementById('m-titulo').value, lugar: document.getElementById('m-lugar').value, fecha_ejecucion: document.getElementById('m-fecha').value, descripcion: document.getElementById('m-desc').value, presupuesto_gastado: document.getElementById('m-presu').value, horas_voluntariado: document.getElementById('m-horas').value, proponente: document.getElementById('m-proponente').value }; if(tipo === 'PROPUESTA') data.aprobado = false; await _supabase.from(tipo === 'PROPUESTA' ? 'proyectos_actividades' : 'proyectos_ejecutados').insert([data]); toggleModal(); cargarDatos(); }
+        async function enviarDatos(tipo) {
+            const table = tipo === 'PROPUESTA' ? 'proyectos_actividades' : 'proyectos_ejecutados';
+            const data = {
+                titulo: document.getElementById('m-titulo').value,
+                resumen: document.getElementById('m-resumen').value,
+                descripcion: document.getElementById('m-desc').value,
+                categoria: document.getElementById('m-cat').value,
+                lugar: document.getElementById('m-lugar').value,
+                fecha_inicio: document.getElementById('m-fecha-ini').value,
+                fecha_fin: document.getElementById('m-fecha-fin').value,
+                subvencion: document.getElementById('m-subvencion').value,
+                presupuesto_gastado: document.getElementById('m-presu').value,
+                fuente_financiamiento: document.getElementById('m-fuente').value,
+                colaboradores: document.getElementById('m-colab').value,
+                proponente: document.getElementById('m-contacto').value, 
+                evaluacion_necesidades: document.getElementById('m-eval').value,
+                impacto_sostenibilidad: document.getElementById('m-impacto').value,
+                voluntarios_cantidad: document.getElementById('m-vol').value,
+                horas_voluntariado: document.getElementById('m-horas').value,
+                donacion_efectivo: document.getElementById('m-cash').value,
+                contribuciones_especie: document.getElementById('m-especie').value
+            };
+            
+            if(tipo === 'PROPUESTA') data.aprobado = false;
+            
+            const { error } = await _supabase.from(table).insert([data]);
+            
+            if(error) {
+                alert("Error al guardar: " + error.message);
+            } else {
+                alert("¡Proyecto guardado exitosamente en el Monitor!");
+                toggleModal(); 
+                cargarDatos();
+            }
+        }
         function descargarPDF(pro) { const { jsPDF } = window.jspdf; const doc = new jsPDF(); doc.setFillColor(225, 29, 72); doc.rect(0, 0, 210, 40, 'F'); doc.setTextColor(255, 255, 255); doc.setFontSize(22); doc.text("INFORME MYROTARY FINAL", 20, 25); doc.autoTable({ startY: 50, head: [['Categoría', 'Información']], body: [['Título', pro.titulo], ['Lugar', pro.lugar], ['Monto', pro.presupuesto_gastado + '$'], ['Horas', pro.horas_voluntariado]], headStyles: { fillColor: [225, 29, 72] } }); doc.save(`Informe_${pro.titulo}.pdf`); }
         window.onload = () => { cargarDatos(); startCarrusel(); };
     </script>
 </body>
 </html>
+
 
 
 
