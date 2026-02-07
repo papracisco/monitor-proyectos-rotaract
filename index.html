@@ -207,13 +207,52 @@
         function authAdmin() { if(prompt("Clave Presidente:") === "Delicias2026") { isAdmin = !isAdmin; alert("Admin: " + isAdmin); cargarDatos(); } }
         function toggleModal() { const m = document.getElementById('modal-general'); m.style.display = m.style.display === 'flex' ? 'none' : 'flex'; m.style.opacity = 1; }
         function toggleDirectiva() { const p = document.getElementById('panel-directiva'); const isVisible = p.style.visibility === 'visible'; p.style.visibility = isVisible ? 'hidden' : 'visible'; gsap.to(p, {x: isVisible ? "100%" : 0, duration: 0.5}); }
-        function abrirModal(tipo) { const f = document.getElementById('form-dinamico'); f.innerHTML = `<div class="md:col-span-2"><label>Título del proyecto</label><input type="text" id="m-titulo" class="w-full bg-[#020617] border border-slate-800 p-4 rounded-2xl text-white outline-none italic"></div><div><label>Ubicación</label><input type="text" id="m-lugar" class="w-full bg-[#020617] border border-slate-800 p-4 rounded-2xl text-white outline-none italic"></div><div><label>Fecha</label><input type="date" id="m-fecha" class="w-full bg-[#020617] border border-slate-800 p-4 rounded-2xl text-white outline-none italic"></div><div class="md:col-span-2"><label>Descripción Detallada</label><textarea id="m-desc" class="w-full bg-[#020617] border border-slate-800 p-4 rounded-2xl text-white outline-none h-32"></textarea></div><div><label>Inversión ($)</label><input type="text" id="m-presu" class="w-full bg-[#020617] border border-slate-800 p-4 rounded-2xl text-white outline-none italic"></div><div><label>Horas Totales</label><input type="text" id="m-horas" class="w-full bg-[#020617] border border-slate-800 p-4 rounded-2xl text-white outline-none italic"></div><div class="md:col-span-2"><label>Socio Responsable</label><input type="text" id="m-proponente" class="w-full bg-[#020617] border border-slate-800 p-4 rounded-2xl text-white outline-none italic"></div>`; document.getElementById('modal-titulo').innerText = tipo === 'PROPUESTA' ? 'Nueva Propuesta' : 'Informe MyRotary Final'; document.getElementById('btn-enviar').onclick = () => enviarDatos(tipo); toggleModal(); }
+        function abrirModal(tipo) {
+            const f = document.getElementById('form-dinamico');
+            f.innerHTML = `
+                <div class="md:col-span-2 text-rose-500 border-l-2 border-rose-600 pl-2 my-2 italic tracking-widest text-[10px] font-black uppercase">Parte 1: Identificación</div>
+                <div class="md:col-span-2"><label>Título del proyecto</label><input type="text" id="m-titulo" class="w-full bg-[#020617] border border-slate-800 p-3 rounded-xl text-white outline-none italic"></div>
+                <div class="md:col-span-2"><label>Resumen (Una oración)</label><input type="text" id="m-resumen" class="w-full bg-[#020617] border border-slate-800 p-3 rounded-xl text-white outline-none italic"></div>
+                <div class="md:col-span-2"><label>Descripción (Propósito, Plan y Beneficiarios)</label><textarea id="m-desc" class="w-full bg-[#020617] border border-slate-800 p-3 rounded-xl text-white h-24 outline-none italic resize-none"></textarea></div>
+                <div><label>Categoría</label>
+                    <select id="m-cat" class="w-full bg-[#020617] border border-slate-800 p-3 rounded-xl text-white outline-none italic">
+                        <option>En la comunidad</option><option>Internacional</option><option>Profesional</option><option>Recaudación de fondos</option><option>Polio</option><option>Respuesta ante catástrofes</option><option>Área de interés</option>
+                    </select>
+                </div>
+                <div><label>Ubicación</label><input type="text" id="m-lugar" class="w-full bg-[#020617] border border-slate-800 p-3 rounded-xl text-white outline-none italic"></div>
+                <div><label>Fecha de Inicio</label><input type="date" id="m-fecha-ini" class="w-full bg-[#020617] border border-slate-800 p-3 rounded-xl text-white outline-none"></div>
+                <div><label>Fecha Fin (Si aplica)</label><input type="date" id="m-fecha-fin" class="w-full bg-[#020617] border border-slate-800 p-3 rounded-xl text-white outline-none"></div>
+
+                <div class="md:col-span-2 text-rose-500 border-l-2 border-rose-600 pl-2 my-2 italic tracking-widest text-[10px] font-black uppercase">Parte 2: Financiamiento</div>
+                <div><label>¿Subvención Rotary?</label><select id="m-subvencion" class="w-full bg-[#020617] border border-slate-800 p-3 rounded-xl text-white outline-none italic"><option>No</option><option>Global</option><option>Distrital</option></select></div>
+                <div><label>Presupuesto Total ($)</label><input type="text" id="m-presu" class="w-full bg-[#020617] border border-slate-800 p-3 rounded-xl text-white outline-none italic"></div>
+                <div class="md:col-span-2"><label>Fuente de financiamiento</label><input type="text" id="m-fuente" placeholder="Club, Distrito, etc." class="w-full bg-[#020617] border border-slate-800 p-3 rounded-xl text-white outline-none italic"></div>
+
+                <div class="md:col-span-2 text-rose-500 border-l-2 border-rose-600 pl-2 my-2 italic tracking-widest text-[10px] font-black uppercase">Parte 3: Colaboradores y Contactos</div>
+                <div class="md:col-span-2"><label>Colaboradores (Clubes, Grupos de Acción)</label><textarea id="m-colab" class="w-full bg-[#020617] border border-slate-800 p-3 rounded-xl text-white h-16 outline-none italic resize-none"></textarea></div>
+                <div class="md:col-span-2"><label>Personas de contacto (Director/Organizador)</label><input type="text" id="m-contacto" class="w-full bg-[#020617] border border-slate-800 p-3 rounded-xl text-white outline-none italic"></div>
+
+                <div class="md:col-span-2 text-rose-500 border-l-2 border-rose-600 pl-2 my-2 italic tracking-widest text-[10px] font-black uppercase">Parte 4: Evaluación e Impacto</div>
+                <div class="md:col-span-2"><label>Evaluación de necesidades comunidad</label><textarea id="m-eval" class="w-full bg-[#020617] border border-slate-800 p-3 rounded-xl text-white h-16 outline-none italic resize-none"></textarea></div>
+                <div class="md:col-span-2"><label>Impacto y Sostenibilidad</label><textarea id="m-impacto" class="w-full bg-[#020617] border border-slate-800 p-3 rounded-xl text-white h-20 outline-none italic resize-none"></textarea></div>
+
+                <div class="md:col-span-2 text-rose-500 border-l-2 border-rose-600 pl-2 my-2 italic tracking-widest text-[10px] font-black uppercase">Parte 5: Cifras Finales</div>
+                <div><label>Participantes (Voluntarios)</label><input type="text" id="m-vol" class="w-full bg-[#020617] border border-slate-800 p-3 rounded-xl text-white outline-none italic"></div>
+                <div><label>Duración (Horas Totales)</label><input type="text" id="m-horas" class="w-full bg-[#020617] border border-slate-800 p-3 rounded-xl text-white outline-none italic"></div>
+                <div><label>Donación Efectivo ($)</label><input type="text" id="m-cash" class="w-full bg-[#020617] border border-slate-800 p-3 rounded-xl text-white outline-none italic"></div>
+                <div><label>Contribuciones en Especie</label><input type="text" id="m-especie" class="w-full bg-[#020617] border border-slate-800 p-3 rounded-xl text-white outline-none italic"></div>
+            `;
+            document.getElementById('modal-titulo').innerText = tipo === 'PROPUESTA' ? 'Ficha de Propuesta' : 'Informe MyRotary Final';
+            document.getElementById('btn-enviar').onclick = () => enviarDatos(tipo);
+            toggleModal();
+        }
         async function enviarDatos(tipo) { const data = { titulo: document.getElementById('m-titulo').value, lugar: document.getElementById('m-lugar').value, fecha_ejecucion: document.getElementById('m-fecha').value, descripcion: document.getElementById('m-desc').value, presupuesto_gastado: document.getElementById('m-presu').value, horas_voluntariado: document.getElementById('m-horas').value, proponente: document.getElementById('m-proponente').value }; if(tipo === 'PROPUESTA') data.aprobado = false; await _supabase.from(tipo === 'PROPUESTA' ? 'proyectos_actividades' : 'proyectos_ejecutados').insert([data]); toggleModal(); cargarDatos(); }
         function descargarPDF(pro) { const { jsPDF } = window.jspdf; const doc = new jsPDF(); doc.setFillColor(225, 29, 72); doc.rect(0, 0, 210, 40, 'F'); doc.setTextColor(255, 255, 255); doc.setFontSize(22); doc.text("INFORME MYROTARY FINAL", 20, 25); doc.autoTable({ startY: 50, head: [['Categoría', 'Información']], body: [['Título', pro.titulo], ['Lugar', pro.lugar], ['Monto', pro.presupuesto_gastado + '$'], ['Horas', pro.horas_voluntariado]], headStyles: { fillColor: [225, 29, 72] } }); doc.save(`Informe_${pro.titulo}.pdf`); }
         window.onload = () => { cargarDatos(); startCarrusel(); };
     </script>
 </body>
 </html>
+
 
 
 
