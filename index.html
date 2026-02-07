@@ -281,11 +281,57 @@
                 cargarDatos();
             }
         }
-        function descargarPDF(pro) { const { jsPDF } = window.jspdf; const doc = new jsPDF(); doc.setFillColor(225, 29, 72); doc.rect(0, 0, 210, 40, 'F'); doc.setTextColor(255, 255, 255); doc.setFontSize(22); doc.text("INFORME MYROTARY FINAL", 20, 25); doc.autoTable({ startY: 50, head: [['Categoría', 'Información']], body: [['Título', pro.titulo], ['Lugar', pro.lugar], ['Monto', pro.presupuesto_gastado + '$'], ['Horas', pro.horas_voluntariado]], headStyles: { fillColor: [225, 29, 72] } }); doc.save(`Informe_${pro.titulo}.pdf`); }
+        function descargarPDF(pro) {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            
+            // Cabecera
+            doc.setFillColor(225, 29, 72);
+            doc.rect(0, 0, 210, 40, 'F');
+            doc.setTextColor(255, 255, 255);
+            doc.setFontSize(22);
+            doc.setFont("helvetica", "bold");
+            doc.text("INFORME MYROTARY FINAL", 20, 25);
+            doc.setFontSize(10);
+            doc.text("ROTARACT LAS DELICIAS - DISTRITO 4370", 20, 32);
+
+            // Tabla con toda la info nueva
+            doc.autoTable({
+                startY: 50,
+                head: [['Categoría', 'Información Detallada']],
+                body: [
+                    ['Título del Proyecto', pro.titulo || '-'],
+                    ['Resumen', pro.resumen || '-'],
+                    ['Descripción', pro.descripcion || '-'],
+                    ['Categoría Rotary', pro.categoria || '-'],
+                    ['Ubicación', pro.lugar || '-'],
+                    ['Fecha Inicio', pro.fecha_inicio || '-'],
+                    ['Fecha Fin', pro.fecha_fin || '-'],
+                    ['Subvención', pro.subvencion || '-'],
+                    ['Presupuesto Total', (pro.presupuesto_gastado || '0') + '$'],
+                    ['Fuente de Financiamiento', pro.fuente_financiamiento || '-'],
+                    ['Colaboradores', pro.colaboradores || '-'],
+                    ['Contacto / Responsable', pro.proponente || '-'],
+                    ['Evaluación de Necesidades', pro.evaluacion_necesidades || '-'],
+                    ['Impacto y Sostenibilidad', pro.impacto_sostenibilidad || '-'],
+                    ['Voluntarios Participantes', pro.voluntarios_cantidad || '0'],
+                    ['Horas de Servicio Totales', pro.horas_voluntariado || '0'],
+                    ['Donación en Efectivo', (pro.donacion_efectivo || '0') + '$'],
+                    ['Contribuciones en Especie', pro.contribuciones_especie || '-']
+                ],
+                headStyles: { fillColor: [225, 29, 72], textColor: [255, 255, 255], fontStyle: 'bold' },
+                styles: { fontSize: 9, cellPadding: 3, overflow: 'linebreak' },
+                columnStyles: { 0: { cellWidth: 50, fontStyle: 'bold' } },
+                alternateRowStyles: { fillColor: [245, 245, 245] }
+            });
+
+            doc.save(`Informe_${pro.titulo.replace(/\s+/g, '_')}.pdf`);
+        }
         window.onload = () => { cargarDatos(); startCarrusel(); };
     </script>
 </body>
 </html>
+
 
 
 
